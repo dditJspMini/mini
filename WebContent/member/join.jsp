@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>  
 <%-- <%@ include file="../header.jsp" %>    --%>
-<%@ include file="sub_img.jsp"%> 
-<%@ include file="sub_menu.jsp" %>   
-  <article>
+<%@ include file="sub_menu.jsp" %>
     <h2>Join Us</h2>
     <form id="join" action="join.did" method="post" name="formm">
       <fieldset>
@@ -39,7 +37,6 @@
         <input type="reset"      value="취소"     class="cancel">
       </div>
     </form>
-  </article>
 <%-- <%@ include file="../footer.jsp" %> --%>
 
 

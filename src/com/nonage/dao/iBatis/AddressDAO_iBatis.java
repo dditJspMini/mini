@@ -22,6 +22,7 @@ public class AddressDAO_iBatis implements AddressDAO {
 	@Override
 	public ArrayList<AddressVO> selectAddressByDong(String dong) throws SQLException{
 		ArrayList<AddressVO> addressList=(ArrayList<AddressVO>)client.queryForList("selectAddressByDong",dong);
+		
 		return addressList;
 
 	}

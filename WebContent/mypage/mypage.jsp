@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ include file="../header.jsp" %> --%>
-<%@ include file="sub_img.jsp"%>
+
 <%@ include file="sub_menu.jsp"%>
 <article>
 	<h2>My Page(${title})</h2>

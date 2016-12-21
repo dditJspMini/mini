@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
   pageEncoding="utf-8"%>  
 <%-- <%@ include file="../header.jsp" %> --%>  
-<%@ include file="sub_img.jsp"%> 
-<%@ include file="sub_menu.jsp" %>  
 
-     
-  <article>
     <h1>Login</h1>
     <form method="post" action="login.did">
         <fieldset>
@@ -24,5 +20,4 @@
                  onclick="location='findIdForm.did'">     
         </div>
     </form>  
-  </article>
 <%-- <%@ include file="../footer.jsp" %> --%>      

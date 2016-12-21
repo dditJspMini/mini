@@ -44,6 +44,12 @@ public class AddressVO {
 	public void setBunji(String bunji) {
 		this.bunji = bunji;
 	}
+	@Override
+	public String toString() {
+		return "AddressVO [zipNum=" + zipNum + ", sido=" + sido + ", gugun="
+				+ gugun + ", dong=" + dong + ", zipCode=" + zipCode
+				+ ", bunji=" + bunji + "]";
+	}
 	
 	
 	

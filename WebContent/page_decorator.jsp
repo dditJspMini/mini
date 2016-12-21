@@ -26,6 +26,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>프블</title>
+	<link href="css/cookie.css" rel="stylesheet">
 	<script type="text/javascript" src="product/products.js"></script>
 	<script type="text/javascript" src="member/members.js"></script>
 	<script type="text/javascript" src="mypage/mypages.js"></script>
@@ -128,10 +129,14 @@ td {
 								<ul class="nav navbar-nav navbar-right">
 									<li><a href="logout.did"><span
 											class="glyphicon glyphicon-log-out"></span></a></li>
+								<li><a href="mypage.did"><span
+									class="glyphicon glyphicon-shopping-cart"
+											data-toggle="tooltip" data-original-title="Cart"></span></a></li>
 								</ul>
-
+								
 							</c:otherwise>
 						</c:choose>
+						
 					</ul>
 
 
@@ -144,7 +149,7 @@ td {
 	<decorator:body />
 
 	<footer>
-		<nav class="navbar navbar-default navbar-bottom" id="bottombar" >
+		<nav class="navbar navbar-default navbar-fixed-bottom" id="bottombar" >
 			
 			<div>© 2016 Frenchie Bulldog. Powered by Shopify</div>
 		</nav>

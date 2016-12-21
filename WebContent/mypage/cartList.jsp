@@ -4,7 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ include file="../header.jsp" %> --%>
 
-<%@ include file="sub_img.jsp"%>
 <%@ include file="sub_menu.jsp"%>
 <article>
 	<h2>Cart List</h2>

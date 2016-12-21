@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>  
 <%-- <%@ include file="../header.jsp" %>	  --%>
-<%@ include file="sub_img.jsp"%> 
-<%@ include file="sub_menu.jsp" %>   
-  <article>
-    <h2>Join Us</h2>
+<%@ include file="sub_menu.jsp" %>
+<<style>
+#join,#title{
+text-align: center;
+}
+</style>
+    <h2 id="title">Join Us</h2>
     <form id="join" action="joinForm.did" 
 method="post" name="formm">
         언제나 새로운 즐거움이 가득한 d의 회원가입 페이지 입니다. <br>
@@ -190,10 +193,9 @@ method="post" name="formm">
       <div style="text-align: center;">
       <input type="radio" name="okon1" checked> 동의함 &nbsp; &nbsp; &nbsp;
       <input type="radio" name="okon1" checked> 동의안함
+      <input type="button" value="Next" class="submit"  onclick="go_next()"> 
       </div>
-      <input type="button" value="Next" class="submit"  onclick="go_next()" style="float: right;"> 
     </form>
-  </article>
 <%-- <%@ include file="../footer.jsp" %>   --%>
 
 
