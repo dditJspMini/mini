@@ -113,15 +113,18 @@
 	</td>
 	</tr>
 	</table>
-	<br>
-	<br>
+	<br><br>
 	<div class="w3-container">
-	<span id="text"><b>FRENCHIE HOODIE</b></span>
+	<span id="subject"><b>FRENCHIE HOODIE</b></span>
 	<br>
 	<img alt="Hoodies" src="image/feature4.jpg"
 			style="width: 1180px; height: 610px; margin-right: 10px; margin-top:5px; cursor: pointer;"
 			id="img" class="img-rounded">
 	<br><br>
+	<span id="subject"><b>TWEETS</b></span>
+	<div style="max-height:900px">
+<a class="twitter-timeline" href="https://twitter.com/FrenchBulldog__" data-chrome="noheader nofooter" data-tweet-limit="7"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	
 	<br>
 	<br>
 	<br>

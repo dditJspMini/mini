@@ -1,54 +1,112 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-	
-<%-- <%@ include file="../header.jsp"%> --%>
 
-<%@ include file="sub_menu.jsp"%>
 
-<article>
-	<h1>Item</h1>
+<div class="w3-content" style="max-width: 1200px;" id="section" oncontextmenu="return false">
 	<div id="itemdetail">
-		<form method="post" name="formm">
-			<fieldset>
-				<legend> Item detail Info</legend>
-				<a href="productDetail.did?pseq=${productVO.pseq}">
-					<span style="float: left;">
-						<img src="product_images/${productVO.image}" />
-					</span>
-					<h2>${productVO.name}</h2>
-				</a> 
-				<label> 가 격 : </label>
-				<p>${productVO.price2} 원</p>
-				<label> 수 량 : </label> <input type="text" name="quantity" size="2" value="1"><br> 
-				<input type="hidden" name="pseq" value="${productVO.pseq}"><br>
-			</fieldset>
-			<div class="clear"></div>
-			<div id="buttons">
-				<input type="button" value="장바구니에 담기" class="submit" onclick="go_cart()"> 
-				<input type="button" value="즉시 구매" class="submit" onclick="go_direct_order()"> 
-				<input type="reset" value="취소" class="cancel">
+			<div id="productpath">
+				<a href="/mini_project/index.did" style="text-decoration: none">Home</a>
+				/ <a href="/mini_project/catagory.did?kind=1"
+					style="text-decoration: none"> Frenchie Duo Reversible Harness</a>
+				/ <a href="/mini_project/productDetail.did?pseq=1"
+					style="text-decoration: none">${productVO.name}</a>
+				<hr color='gray' id="producthr">
 			</div>
-		</form>
-	</div>
-</article>
 
-<%-- <%@ include file="../footer.jsp"%> --%>
+
+
+
+			<div class="w3-container" style="margin: 50px 0">
+				<div class="w3-half w3-container">
+					<div>
+						<a href="productDetail.did?pseq=${productVO.pseq}"> <img
+							src="product_images/${productVO.image}" style="width: 100%" />
+					</div>
+				</div>
+
+				<div class="w3-half w3-container">
+					<div>
+						<span id="productdetailintro">
+							<h1>${productVO.name}</h1>
+							<h3>￦${productVO.price2}</h3> <br> <br>
+
+							<form>
+								<div class="form-group">
+									<label for="sel1"><b>사이즈</b> </label>
+									<select class="form-control" id="sel1">
+										<option value="m">M</option>
+										<option value="x">X</option>
+										<option value="l">L</option>
+									</select> <br>
+									 
+							</form>	
+							<form>
+									<label for="usr"><b>수량</b>  </label>
+									<input type="text" class="form-control" id="usr" value="1">
+								</div>
+							</form> <br>
+							<div class="w3-container" style="padding-left:340px";><button class="w3-btn w3-round-xlarge" onclick="go_cart()">장바구니</button>&nbsp&nbsp&nbsp<button class="w3-btn w3-round-xlarge" onclick="go_direct_order()">즉시구매</button>
+							</div>
+						</span>
+						<br>
+						<br>
+						
+						<b style="color: black">사이즈가 궁금하세요?</b><br> 
+						<img src="images/sizing.jpg"/ style="width:100%">
+						
+					
+						
+						
+						
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+		
+	</div>
+
+
+
+
+	
+<Br><br><Br><br>
+
+
+
+
+
+
+
+
+</div>
+
 <script type="text/javascript">
 function checkCookie() {
 
     var itemID = getCookie("itemID");
-	var thisItem='${productVO.pseq}:${productVO.image}';   // 제품 아이디와 이미지 이름을 저장  2차원 배열처럼 쓸려고 짱구를 굴림...  json 형태로 저장도 가능할텐데.... 그건 취향대로 
-	if (thisItem){
-		if (itemID != "" && itemID != null) {
-			if (itemID.indexOf(thisItem) ==-1 ){ //값이 없으면 
-					setCookie("itemID",thisItem+"&"+itemID,1);
-			 }
-		} else {
-			if (itemID == "" || itemID == null) {
-				setCookie("itemID",thisItem+"&",1000);
-			}
-		}
-	}
+   var thisItem='${productVO.pseq}:${productVO.image}';   // 제품 아이디와 이미지 이름을 저장  2차원 배열처럼 쓸려고 짱구를 굴림...  json 형태로 저장도 가능할텐데.... 그건 취향대로 
+   if (thisItem){
+      if (itemID != "" && itemID != null) {
+         if (itemID.indexOf(thisItem) ==-1 ){ //값이 없으면 
+               setCookie("itemID",thisItem+"&"+itemID,1);
+          }
+      } else {
+         if (itemID == "" || itemID == null) {
+            setCookie("itemID",thisItem+"&",1000);
+         }
+      }
+   }
 }
 checkCookie();
 

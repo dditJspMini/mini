@@ -31,12 +31,38 @@
 	<script type="text/javascript" src="member/members.js"></script>
 	<script type="text/javascript" src="mypage/mypages.js"></script>
 <style>
+#sel4{
+
+-webkit-appearance: menulist;
+}
+#productdetailintro {
+    font-family: "arial", Georgia, sans-Serif;
+    color:black;
+}
+#producthr {
+    margin-top: 5px;
+    }
+#productpath{
+font-size:100%;
+}
+#productintro{
+padding-left:40px;
+}
+#productname{
+font-size:90%;
+}
+#bottom-margin{
+height:80px;
+}
 #bottombar{
 margin-bottom: 0px;
 text-align:center;
 vertical-align:center;
 }
 #header {
+	padding-top: 70px;
+}
+#footer{
 	padding-top: 70px;
 }
 /* #final{
@@ -78,7 +104,7 @@ td {
     background-repeat:repeat-x;
     background-position:bottom;
 }
-#text {
+#subject {
 	font-size: 30px;
 }
 
