@@ -62,6 +62,7 @@ public class ControllerAction extends HttpServlet {
 
 	private void requestPro(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 
 		String view = null;
 		Action com = null;
@@ -88,8 +89,9 @@ public class ControllerAction extends HttpServlet {
 
 		if (view == null)
 			return;
-		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		dispatcher.forward(request, response);
+		/*RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+		dispatcher.forward(request, response);*/
+		ViewResolver.goURI(view, request, response);
 
 	}
 

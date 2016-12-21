@@ -15,17 +15,17 @@ import com.nonage.dto.MemberVO;
 public class LoginAction implements Action {
 
 	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public String execute(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		String url = "member/login_fail.jsp";
 		HttpSession session = request.getSession();
 
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 
-		//MemberDAO memberDAO = MemberDAO_JDBC.getInstance();
+		// MemberDAO memberDAO = MemberDAO_JDBC.getInstance();
 		MemberDAO memberDAO = MemberDAO_iBatis.getInstance();
-		MemberVO memberVO=null;
+		MemberVO memberVO = null;
 		try {
 			memberVO = memberDAO.getMember(id);
 		} catch (SQLException e) {
@@ -34,13 +34,26 @@ public class LoginAction implements Action {
 		}
 
 		if (memberVO != null) {
-			if (memberVO.getPwd().equals(pwd)) {
-				session.removeAttribute("id");
-				session.setAttribute("loginUser", memberVO);
-				url = "index.did?login=1";
+			if (isAdminUser(id)) { // Admin
+				if (memberVO.getPwd().equals(pwd)) {
+					session.removeAttribute("id");
+					session.setAttribute("loginUser", memberVO);
+					url = "redirect:"+request.getContextPath() +"/admin/adminProductList.did";
+				}
+			} else { // 일반 User
+
+				if (memberVO.getPwd().equals(pwd)) {
+					session.removeAttribute("id");
+					session.setAttribute("loginUser", memberVO);
+					url = "index.did?login=1";
+				}
 			}
 		}
 		return url;
+	}
+
+	private boolean isAdminUser(String id) {
+		return id.equals("admin");
 	}
 
 }
