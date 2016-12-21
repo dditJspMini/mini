@@ -30,8 +30,7 @@
 									<c:otherwise>(답변처리완료)</c:otherwise>
 								</c:choose>
 							</td>
-							<td><a href="#"
-								onClick="javascript:go_view('${qnaVO.qseq}')">
+							<td><a href="adminQnaDetail.did?qseq=${qnaVO.qseq}">
 									${qnaVO.subject} </a></td>
 							<td>${qnaVO.id}</td>
 							<td><fmt:formatDate value="${qnaVO.indate}" /></td>

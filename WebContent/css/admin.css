@@ -24,7 +24,7 @@
 }
 
 #section {
-	height: 800px;
+	height: auto;
 	margin-top: 2%;
 }
 
@@ -44,4 +44,8 @@
 	width: 100%;
 	margin-left: 35%;
 	margin-right: 0;
+}
+
+#kind {
+	width: 20%;
 }

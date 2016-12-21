@@ -13,15 +13,16 @@
 		<div class="container">
 			<h3 class="text-center">PRODUCT LIST</h3>
 
-			<form class="form-inline" action="prodSearch" id="prodSearch"
-				method="post">
+			<form class="form-inline"
+				action="<%=request.getContextPath()%>/admin/adminProductSearch.did"
+				id="prodSearch" method="post">
 				<div class="form-group">
 					<label for="pwd">Product Name :</label> <input type="text"
-						class="form-control" id="prodName">
+						class="form-control" id="key" name="key">
 				</div>
 				<input type="submit" class="btn btn-default" value="Search">
-				<button type="button" class="btn btn-default"
-					onclick="addProd_go();">Product registration</button>
+				<button type="button" class="btn btn-default" onclick="addProd_go()">Product
+					registration</button>
 			</form>
 
 
@@ -49,8 +50,8 @@
 									<td height="23" align="center">${productVO.pseq}</td>
 									<td
 										style="text-align: left; padding-left: 50px; padding-right: 0px;">
-										<a href="#"
-										onClick="go_detail('${tpage}', '${productVO.pseq}')">
+										<a
+										href="adminProductDetail.did?tpage=${tpage}&pseq=${productVO.pseq}">
 											${productVO.name} </a>
 									</td>
 									<td><fmt:formatNumber value="${productVO.price1}" /></td>

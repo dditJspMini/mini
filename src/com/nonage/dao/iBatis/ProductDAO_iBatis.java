@@ -85,9 +85,9 @@ public class ProductDAO_iBatis implements ProductDAO {
 			end_page = page_count;
 		}
 		if (start_page > view_rows) {
-			str += "<a href='adminProductList.do?tpage=1&key="
+			str += "<a href='adminProductList.did?tpage=1&key="
 					+ name + "'>&lt;&lt;</a>&nbsp;&nbsp;";
-			str += "<a href='adminProductList.do?tpage="
+			str += "<a href='adminProductList.did?tpage="
 					+ (start_page - 1);
 			str += "&key=<%=product_name%>'>&lt;</a>&nbsp;&nbsp;";
 		}
@@ -96,16 +96,16 @@ public class ProductDAO_iBatis implements ProductDAO {
 			if (i == tpage) {
 				str += "<font color=red>[" + i + "]&nbsp;&nbsp;</font>";
 			} else {
-				str += "<a href='adminProductList.do?tpage="
+				str += "<a href='adminProductList.did?tpage="
 						+ i + "&key=" + name + "'>[" + i + "]</a>&nbsp;&nbsp;";
 			}
 		}
 
 		if (page_count > end_page) {
-			str += "<a href='adminProductList.do?tpage="
+			str += "<a href='adminProductList.did?tpage="
 					+ (end_page + 1) + "&key=" + name
 					+ "'> &gt; </a>&nbsp;&nbsp;";
-			str += "<a href='adminProductList.do?tpage="
+			str += "<a href='adminProductList.did?tpage="
 					+ page_count + "&key=" + name
 					+ "'> &gt; &gt; </a>&nbsp;&nbsp;";
 		}
