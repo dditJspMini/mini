@@ -20,17 +20,21 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link href="css/shopping.css" rel="stylesheet">
 <link href="css/modal.css" rel="stylesheet">
+<link href="css/join.css" rel="stylesheet">
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 <title>프블</title>
 	<link href="css/cookie.css" rel="stylesheet">
 	<script type="text/javascript" src="product/products.js"></script>
 	<script type="text/javascript" src="member/members.js"></script>
 	<script type="text/javascript" src="mypage/mypages.js"></script>
+	<script type="text/javascript" src="member/join.js"></script>
 <style>
 #flickrembed{
 max-height : 500px;
@@ -162,6 +166,9 @@ td {
 									<li style="font-size: 25px;"><a href="qnaList.did"><span
 											class="glyphicon glyphicon-question-sign"
 											data-toggle="tooltip" data-original-title="Q&A"></span></a></li>
+									<li style="font-size: 25px;"><a href="contract.did"><span
+											class="glyphicon glyphicon-user" data-toggle="tooltip"
+											data-original-title="My Acount"></span></a></li>
 									<li style="font-size: 25px;"><a href="mypage.did"><span
 											class="glyphicon glyphicon-shopping-cart"
 											data-toggle="tooltip" data-original-title="Cart"></span></a></li>
@@ -378,7 +385,18 @@ chkRecent(Cpage - 1);
  
  
  
- 
+ function checkTitle(form) {
+	 var title = form.subject.value;
+	 if(title=="") {
+		 alert("Please enter a title");
+		 form.subject.focus();
+	 }
+	 else {
+		 form.method="post";
+		 form.action="qnaWrite.did";
+		 form.submit();
+	 }
+ }
  
  
  
