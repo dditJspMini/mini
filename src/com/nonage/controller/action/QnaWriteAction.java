@@ -18,7 +18,7 @@ public class QnaWriteAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "qnaList.did";
+		String url = "redirect:qnaList.did";
 			
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();

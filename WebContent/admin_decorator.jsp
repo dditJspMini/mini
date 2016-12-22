@@ -50,7 +50,8 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<%=request.getContextPath()%>/logout.did"><span
-								class="glyphicon glyphicon-log-out" style="color:#600017"></span> Log Out</a></li>
+								class="glyphicon glyphicon-log-out" style="color: #600017;"
+								data-toggle="tooltip" data-original-title="Logout"></span></a></li>
 					</ul>
 				</div>
 			</nav>
@@ -205,6 +206,24 @@
 	  		btn.disabled = true;
 		}
 	}
+
+	$(document).ready(function() {
+		$('[data-toggle="tooltip"]').tooltip({
+			placement : 'bottom'
+		});
+	});
+
+	$(document).ready(function() {
+		$(document).scroll(function() {
+			var top = $(this).scrollTop();
+			if (top < 150) {
+				var dif = 1 - top / 450;
+				$("#final").css({
+					opacity : dif
+				});
+			}
+		})
+	});
 </script>
 </html>
 

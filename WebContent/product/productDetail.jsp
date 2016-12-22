@@ -73,7 +73,7 @@
 
 
 			</div>
-
+			<form method="post" name="formm">
 			<div class="w3-half w3-container">
 				<div>
 					<span id="productdetailintro">
@@ -100,10 +100,9 @@
 						-->
 						
 						<br>
-						<form name="form3">
 							<label for="usr"><b> 선택 수량</b> </label> <input type="text"
-								name="selqty" class="form-control" id="selqty" value="1">
-
+								name="quantity" class="form-control" id="selqty" value="1">
+							<input type="hidden" name="pseq" value="${productVO.pseq}"><br>
 						</form>
 				
 				<br>
