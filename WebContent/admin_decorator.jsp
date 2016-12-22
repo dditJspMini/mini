@@ -25,8 +25,7 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/admin.css">
 </head>
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/admin/product/product.js"></script>
+
 <body>
 	<div id="wrap">
 		<header>
@@ -193,6 +192,17 @@
 				theForm.action = "adminProductUpdate.did";
 				theForm.submit();
 			}
+		}
+	}
+	
+	function delConfirm(text,prodName) {
+		if(text.value==prodName) {
+			btn = document.getElementById('confirmDel');
+	  		btn.disabled = false;
+		}
+		else {
+			btn = document.getElementById('confirmDel');
+	  		btn.disabled = true;
 		}
 	}
 </script>

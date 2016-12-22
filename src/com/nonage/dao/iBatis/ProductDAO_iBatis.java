@@ -145,5 +145,11 @@ public class ProductDAO_iBatis implements ProductDAO {
 		int result = (Integer)client.update("updateProduct",product);
 		return result;
 	}
-
+	
+	// 2016-12-22 jihyun.Park // Implement "delete product"  
+	public int deleteProduct(String prodNum) throws SQLException {
+		int result = (Integer)client.update("deleteProduct",prodNum);
+		return result;
+	}
+	// Implement "delete product"
 }
