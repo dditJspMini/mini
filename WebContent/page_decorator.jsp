@@ -20,17 +20,21 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link href="css/shopping.css" rel="stylesheet">
 <link href="css/modal.css" rel="stylesheet">
+<link href="css/join.css" rel="stylesheet">
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 <title>프블</title>
 	<link href="css/cookie.css" rel="stylesheet">
 	<script type="text/javascript" src="product/products.js"></script>
 	<script type="text/javascript" src="member/members.js"></script>
 	<script type="text/javascript" src="mypage/mypages.js"></script>
+	<script type="text/javascript" src="member/join.js"></script>
 <style>
 #flickrembed{
 max-height : 500px;
