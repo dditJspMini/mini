@@ -58,8 +58,7 @@
 			<img
 			alt="Hoodies" src="image/feature3.jpg"
 			style="width: 380px; height: 344px; margin-right: 10px"></p>
-		
-	</div> -->
+</div> -->
 
 <div class="w3-content" style="max-width: 1200px" id="content">
 	<table align="center">

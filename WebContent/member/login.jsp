@@ -20,4 +20,4 @@
                  onclick="location='findForm.did'">     
         </div>
     </form>  
-<%-- <%@ include file="../footer.jsp" %> --%>      
+  

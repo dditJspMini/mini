@@ -11,7 +11,7 @@
 	<div class="panel-group" style="width: 90%">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<b>FrenchBullDog 서비스 약관 동의</b>
+				&nbsp&nbsp&nbsp<b>FrenchBullDog 서비스 약관 동의</b>
 			</div>
 			<div class="panel-body">
 				<span class="tit">제 1 조 목적</span> 본 약관은 서비스 이용자가 주식회사
