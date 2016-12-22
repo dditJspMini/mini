@@ -16,7 +16,7 @@
 	  <c:when test="${param.message!=null }">
 	  		<c:choose>
 	  		<c:when test="${param.message!=''}">
-	  		<h3>당신의 아이디는${param.message} 입니다.</h3> 
+	  		<h3>당신의 아이디는 ${param.message} 입니다.</h3> 
 	  		</c:when>
 	  		<c:otherwise>	
 	  		<h3>해당 아이디가 없습니다.</h3>
