@@ -44,6 +44,7 @@
 					<th>Product Name</th>
 					<th>Cost</th>
 					<th>Price</th>
+					
 					<th>Registration Date</th>
 					<th>Use Y/N</th>
 				</tr>
