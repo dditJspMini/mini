@@ -3,6 +3,7 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <div id="section">
 	<div class="container">
@@ -39,9 +40,10 @@
 		<table id="productList" class="table table-striped">
 			<thead>
 				<tr>
-					<th>Number</th>
+					<th >Number</th>
 					<th>Product Name</th>
-					<th>cost</th>
+					<th>Cost</th>
+					<th>Price</th>
 					<th>Registration Date</th>
 					<th>Use Y/N</th>
 				</tr>
