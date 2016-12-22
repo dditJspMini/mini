@@ -28,6 +28,7 @@ public class CartInsertAction implements Action {
 		} else {
 			CartVO cartVO = new CartVO();
 			cartVO.setId(loginUser.getId());
+			System.out.println(request.getParameter("pseq"));
 			cartVO.setPseq(Integer.parseInt(request.getParameter("pseq")));
 			cartVO.setQuantity(Integer.parseInt(request
 					.getParameter("quantity")));

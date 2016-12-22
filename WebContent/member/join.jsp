@@ -37,7 +37,9 @@
         <input type="reset"      value="취소"     class="cancel">
       </div>
     </form>
-<%-- <%@ include file="../footer.jsp" %> --%>
+
+
+
 
 
   
