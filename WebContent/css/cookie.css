@@ -1,18 +1,21 @@
 #rightSide{
 position: absolute;
 top: 547px;
-left: 50%;
+left: 35%;
 margin: 0 0 0 510px;
 	}
 #rightSide #right_zzim {
-position: fixed;
-top: 126px;
+position: absolute;
+z-index:10;
+top: 700px;
 left: 50%;
 margin-left: 700px;
 border:1px solid #B0B5BD;
 width:150px;
 height:600px;
 }
+
+
 
 #rightSide #right_zzim  div {text-align:center;}
 #rightSide #right_zzim  div.recTit{line-height:1.5em;padding:5px;color:white;background-color:#505A69;}

@@ -19,6 +19,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link href="css/shopping.css" rel="stylesheet">
+<link href="css/modal.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -31,8 +32,15 @@
 	<script type="text/javascript" src="member/members.js"></script>
 	<script type="text/javascript" src="mypage/mypages.js"></script>
 <style>
+#flickrembed{
+max-height : 500px;
+}
+#right_zzim.fixed {
+  position: fixed;
+  top: 0;
+  margin-top:30px;
+}
 #sel4{
-
 -webkit-appearance: menulist;
 }
 #productdetailintro {
@@ -130,9 +138,9 @@ td {
 						<li><a href="catagory.did?kind=2">COMFORT LEASH</a></li>
 						<li><a href="catagory.did?kind=3">HOODIE</a></li>
 						<li><a href="catagory.did?kind=4">STRAP HARNESS</a></li>
-						<li><a href="catagory.did?kind=5">ON SALE</a></li>
-					</div>
+						<li><a href="catagory.did?kind=5">ON SALE</a></li>	
 					</ul>
+					</div>
 					<ul class="nav navbar-nav navbar-right" style="margin-top: 15px;">
 						<c:choose>
 							<c:when test="${empty loginUser }">
@@ -201,5 +209,47 @@ td {
 			}
 		})
 	});
+
+	<%-- product modal --%>
+ 	// Get the modal
+	var modal = document.getElementById('myModal');
+
+	// Get the image and insert it inside the modal - use its "alt" text as a caption
+	var img = document.getElementById('myImg');
+	var modalImg = document.getElementById("img01");
+	var captionText = document.getElementById("caption");
+	img.onclick = function(){
+	    modal.style.display = "block";
+	    modalImg.src = this.src;
+	    captionText.innerHTML = this.alt;
+	}
+	modalImg.onclick = function(){
+		modal.style.display='none';
+	}
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() { 
+	  modal.style.display = "none";
+	}
+	
+
+	(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/AWBmHDPEV8gZInAKIzqiBNCLiDjvAjBbQ64WJRHp/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+
+	
+	/* function change(){
+	var selectObject = document.getElementById("sel").value;
+	if(selectObject=="X"){
+		document.getElementById("qty").value=Math.floor(Math.random() * 20) + 1;
+	}else if(selectObject=="L"){
+		document.getElementById("qty").value=Math.floor(Math.random() * 30) + 1;
+	}
+	
+	}
+	 */
+	            
+	
+
 </script>
 </html>
