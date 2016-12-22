@@ -138,13 +138,16 @@ td {
 							<c:when test="${empty loginUser }">
 								<ul class="nav navbar-nav navbar-right">
 
-									<li><a href="loginForm.did"><span
+									<li style="font-size: 25px;"><a href="loginForm.did"><span
 											class="glyphicon glyphicon-log-in" data-toggle="tooltip"
 											data-original-title="login"></span></a></li>
-									<li><a href="contract.did"><span
+									<li style="font-size: 25px;"><a href="contract.did"><span
 											class="glyphicon glyphicon-user" data-toggle="tooltip"
 											data-original-title="My Acount"></span></a></li>
-									<li><a href="mypage.did"><span
+									<li style="font-size: 25px;"><a href="mypage.did"><span
+											class="glyphicon glyphicon-question-sign"
+											data-toggle="tooltip" data-original-title="Q&A"></span></a></li>
+									<li style="font-size: 25px;"><a href="mypage.did"><span
 											class="glyphicon glyphicon-shopping-cart"
 											data-toggle="tooltip" data-original-title="Cart"></span></a></li>
 
@@ -153,10 +156,11 @@ td {
 							<c:otherwise>
 							
 								<ul class="nav navbar-nav navbar-right">
-									<li><a href="logout.did"><span
-											class="glyphicon glyphicon-log-out"></span></a></li>
-								<li><a href="mypage.did"><span
-									class="glyphicon glyphicon-shopping-cart"
+									<li style="font-size: 25px;"><a href="logout.did"><span
+											class="glyphicon glyphicon-log-out"
+											data-toggle="tooltip" data-original-title="Logout"></span></a></li>
+									<li style="font-size: 25px;"><a href="mypage.did"><span
+											class="glyphicon glyphicon-shopping-cart"
 											data-toggle="tooltip" data-original-title="Cart"></span></a></li>
 								</ul>
 								
