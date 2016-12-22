@@ -21,7 +21,7 @@ public class AdminProductWriteAction implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    String url = "adminProductList.did";
+    String url = "redirect:adminProductList.did";
     
     HttpSession session = request.getSession();
     
