@@ -29,5 +29,14 @@
 	<select id="listMember" parameterClass="str" resultClass="member">
 		select * from member where name like '%'||#name#||'%' order by indate desc
 	</select>
+	
+	<select id="serchId" parameterClass="member" resultClass="member">
+		select * from member where phone=#phone# and name=#name#
+	</select>
+	
+	<select id="serchPwd" parameterClass="member" resultClass="member">
+		select * from member where email=#email# and name=#name#
+	</select>
+	
 
 </sqlMap>

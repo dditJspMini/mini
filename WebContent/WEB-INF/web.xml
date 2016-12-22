@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee">
   <filter>
     <filter-name>sitemesh</filter-name>
     <filter-class>
-		com.opensymphony.sitemesh.webapp.SiteMeshFilter
-	</filter-class>
+         com.opensymphony.sitemesh.webapp.SiteMeshFilter
+      </filter-class>
   </filter>
   <filter-mapping>
     <filter-name>sitemesh</filter-name>
@@ -18,4 +18,12 @@
     <servlet-name>ControllerAction</servlet-name>
     <url-pattern>*.did</url-pattern>
   </servlet-mapping>
+  <filter>
+    <filter-name>AdminCheck</filter-name>
+    <filter-class>com.nonage.filter.AdminCheckFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AdminCheck</filter-name>
+    <url-pattern>/index.html</url-pattern>
+  </filter-mapping>
 </web-app>

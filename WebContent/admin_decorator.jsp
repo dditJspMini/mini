@@ -25,8 +25,7 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/admin.css">
 </head>
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/admin/product/product.js"></script>
+
 <body>
 	<div id="wrap">
 		<header>
@@ -51,7 +50,7 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<%=request.getContextPath()%>/logout.did"><span
-								class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+								class="glyphicon glyphicon-log-out" style="color:#600017"></span> Log Out</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -193,6 +192,17 @@
 				theForm.action = "adminProductUpdate.did";
 				theForm.submit();
 			}
+		}
+	}
+	
+	function delConfirm(text,prodName) {
+		if(text.value==prodName) {
+			btn = document.getElementById('confirmDel');
+	  		btn.disabled = false;
+		}
+		else {
+			btn = document.getElementById('confirmDel');
+	  		btn.disabled = true;
 		}
 	}
 </script>

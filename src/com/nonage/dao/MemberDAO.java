@@ -11,4 +11,6 @@ public interface MemberDAO {
 	public int insertMember(MemberVO memberVO) throws SQLException;
 	
 	public ArrayList<MemberVO> listMember(String member_name) throws SQLException;
+	public MemberVO serchId(String name,String phone) throws SQLException;
+	public MemberVO serchPwd(String name,String email) throws SQLException;
 }

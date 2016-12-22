@@ -54,5 +54,9 @@
 		image=#image#, bestyn=#bestyn#
 		where pseq=#pseq#
 	</update>
+	
+	<update id="deleteProduct" parameterClass="str">
+		delete from product where pseq=#pseq#
+	</update>
 
 </sqlMap>

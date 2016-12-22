@@ -58,4 +58,22 @@ public class MemberDAO_iBatis implements MemberDAO {
 		return memberList;
 	}
 
+	@Override
+	public MemberVO serchId(String name,String phone) throws SQLException {
+		MemberVO setmember = new MemberVO();
+		setmember.setName(name);
+		setmember.setPhone(phone);
+		MemberVO member = (MemberVO) client.queryForObject("serchId", setmember);
+		return member;
+	}
+
+	@Override
+	public MemberVO serchPwd(String name, String email) throws SQLException {
+		MemberVO setmember = new MemberVO();
+		setmember.setName(name);
+		setmember.setEmail(email);
+		MemberVO member = (MemberVO) client.queryForObject("serchPwd", setmember);
+		return member;
+	}
+
 }

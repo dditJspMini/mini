@@ -17,7 +17,7 @@
             <input type="button" value="회원가입" class="cancel"
                  onclick="location='joinForm.did'">
             <input type="button" value="아이디 비밀번호 찾기" class="submit"
-                 onclick="location='findIdForm.did'">     
+                 onclick="location='findForm.did'">     
         </div>
     </form>  
 <%-- <%@ include file="../footer.jsp" %> --%>      
