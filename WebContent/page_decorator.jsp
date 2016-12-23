@@ -32,7 +32,7 @@
 <title>프블</title>
 	<link href="css/cookie.css" rel="stylesheet">
 	<script type="text/javascript" src="product/products.js"></script>
-	<script type="text/javascript" src="member/members.js"></script>
+	<script type="text/javascript" src="member/members98.js"></script>
 	<script type="text/javascript" src="mypage/mypages.js"></script>
 	<script type="text/javascript" src="member/join.js"></script>
 <style>
