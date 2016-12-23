@@ -75,16 +75,19 @@
 	<table align="center">
 		<tr>
 			<td>
-				<div class="w3-display-container w3-hover-opacity"style="width: 380px" id="1">
-					<img alt="Hoodies" src="image/feature1.jpg"
+				<div class="w3-display-container w3-hover-opacity"
+					style="width: 380px" id="1">
+					<a href="catagory.did?kind=1"> <img alt="Hoodies"
+						src="image/feature1.jpg"
 						style="width: 380px; height: 344px; margin-right: 10px; cursor: pointer;"
 						id="img" class="img-rounded">
-					<div class="w3-display-middle w3-display-hover w3-xlarge">
-						<button
-							class="w3-btn w3-white w3-border w3-round-large w3-animate-opacity">
-							<b>HARNESSES</b>
-						</button>
-					</div>
+						<div class="w3-display-middle w3-display-hover w3-xlarge">
+							<button
+								class="w3-btn w3-white w3-border w3-round-large w3-animate-opacity">
+								<b>HARNESSES</b>
+							</button>
+						</div>
+					</a>
 				</div>
 
 
@@ -92,16 +95,19 @@
 
 			</td>
 			<td>
-				<div class="w3-display-container w3-hover-opacity"	style="width: 380px;" id="2">
-					<img alt="Hoodies" src="image/feature2.jpg"
+				<div class="w3-display-container w3-hover-opacity"
+					style="width: 380px;" id="2">
+					<a href="catagory.did?kind=3"> <img alt="Hoodies"
+						src="image/feature2.jpg"
 						style="width: 380px; height: 344px; margin-right: 10px; cursor: pointer;"
 						id="img" class="img-rounded">
-					<div class="w3-display-middle w3-display-hover w3-xlarge">
-						<button
-							class="w3-btn w3-white w3-border w3-round-large w3-animate-opacity">
-							<b>HOODIES</b>
-						</button>
-					</div>
+						<div class="w3-display-middle w3-display-hover w3-xlarge">
+							<button
+								class="w3-btn w3-white w3-border w3-round-large w3-animate-opacity">
+								<b>HOODIES</b>
+							</button>
+						</div>
+					</a>
 				</div>
 
 
@@ -109,16 +115,18 @@
 
 			</td>
 			<td>
-				<div class="w3-display-container w3-hover-opacity"style="width: 380px" id="3">
-					<img alt="Hoodies" src="image/feature3.jpg"
+				<div class="w3-display-container w3-hover-opacity"
+					style="width: 380px" id="3">
+					<a href="catagory.did?kind=5"> <img alt="Hoodies" src="image/feature3.jpg"
 						style="width: 380px; height: 344px; margin-right: 10px; cursor: pointer;"
 						id="img" class="img-rounded">
-					<div class="w3-display-middle w3-display-hover w3-xlarge">
-						<button
-							class="w3-btn w3-white w3-border w3-round-large w3-animate-opacity">
-							<b>BOW TIES</b>
-						</button>
-					</div>
+						<div class="w3-display-middle w3-display-hover w3-xlarge">
+							<button
+								class="w3-btn w3-white w3-border w3-round-large w3-animate-opacity">
+								<b>BOW TIES</b>
+							</button>
+						</div>
+					</a>
 				</div>
 			</td>
 		</tr>
