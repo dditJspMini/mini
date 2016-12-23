@@ -206,7 +206,7 @@ td {
 			</div>
 		</div>
 	</div>
-<footer class="footer-distributed" style="padding-top : 20px; padding-bottom:20px; padding-left:350px; padding-right:90px">
+<footer class="footer-distributed" style="padding-top : 20px; padding-bottom:20px; padding-left:250px; padding-right:90px">
 
 			<div class="footer-left">
 

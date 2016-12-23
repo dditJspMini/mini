@@ -19,7 +19,7 @@ public class CartInsertAction implements Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String url = "cartList.did";
+		String url = "redirect:cartList.did";
 
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
