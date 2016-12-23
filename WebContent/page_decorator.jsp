@@ -21,6 +21,7 @@
 <link href="css/shopping.css" rel="stylesheet">
 <link href="css/modal.css" rel="stylesheet">
 <link href="css/join.css" rel="stylesheet">
+<link href="css/footer-distributed-with-address-and-phones.css" rel="stylesheet">
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -133,7 +134,7 @@ td {
 					</div>
 					<div class="navbar-top" id="final3">
 					<ul class="nav navbar-nav" style="margin-top: 15px;">
-						<li><a href="catagory.did?kind=1">DOU REVERSIBLE HARNESS</a></li>
+						<li><a href="catagory.did?kind=1">DUO REVERSIBLE HARNESS</a></li>
 						<li><a href="catagory.did?kind=2">COMFORT LEASH</a></li>
 						<li><a href="catagory.did?kind=3">HOODIE</a></li>
 						<li><a href="catagory.did?kind=4">STRAP HARNESS</a></li>
@@ -145,18 +146,18 @@ td {
 							<c:when test="${empty loginUser }">
 								<ul class="nav navbar-nav navbar-right">
 
-									<li style="font-size: 25px;"><a href="loginForm.did"><span
+									<li style="font-size: 25px;"><a href="javascript:popupOpen();"><span
 											class="glyphicon glyphicon-log-in" data-toggle="tooltip"
 											data-original-title="login"></span></a></li>
-									<li style="font-size: 25px;"><a href="mypage.did"><span
-											class="glyphicon glyphicon-user" data-toggle="tooltip"
-											data-original-title="My Acount"></span></a></li>
-									<li style="font-size: 25px;"><a href="qnaList.did"><span
-											class="glyphicon glyphicon-question-sign"
-											data-toggle="tooltip" data-original-title="Q&A"></span></a></li>
-									<li style="font-size: 25px;"><a href="cartList.did"><span
-											class="glyphicon glyphicon-shopping-cart"
-											data-toggle="tooltip" data-original-title="Cart"></span></a></li>
+											
+									<li style="font-size: 25px;"><a href="joinForm.did"><span
+											class="glyphicon glyphicon-plus" data-toggle="tooltip"
+											data-original-title="join"></span></a></li>		
+											
+									<li style="font-size: 25px;"><a href="findForm.did"><span
+											class="glyphicon glyphicon-search" data-toggle="tooltip"
+											data-original-title="join"></span></a></li>		
+								
 
 								</ul>
 							</c:when>
@@ -192,24 +193,70 @@ td {
 
 	<decorator:body />
 	<div id="rightSide">
-	<div id="right_zzim">
-		<div  class="recTit">최근본상품 <span id=recentCnt></span></div>
-			   <div id="ul">
-			   </div> <!-- 본 상품이 뿌려질 부분  -->
-		<div id="paging">
-		<a class="btn_prev" style="cursor:pointer" >이전</a>
-		<span id="currentPage"></span>
-		<span id="totalPageCount"></span>
-		<a class="btn_next" style="cursor:pointer" >다음</a>
+		<div id="right_zzim">
+			<div class="recTit">
+				최근본상품 <span id=recentCnt></span>
+			</div>
+			<div id="ul"></div>
+			<!-- 본 상품이 뿌려질 부분  -->
+			<div id="paging">
+				<a class="btn_prev" style="cursor: pointer">이전</a> <span
+					id="currentPage"></span> <span id="totalPageCount"></span> <a
+					class="btn_next" style="cursor: pointer">다음</a>
+			</div>
 		</div>
 	</div>
-	</div> 
-	<footer id="footer">
-		<nav class="navbar navbar-default navbar-fixed-bottom" id="bottombar" >
-			
-			<div>© 2016 Frenchie Bulldog. Powered by Shopify</div>
-		</nav>
+<footer class="footer-distributed" style="padding-top : 20px; padding-bottom:20px; padding-left:350px; padding-right:90px">
 
+			<div class="footer-left">
+
+				<h3>Frenchie<span>BullDog</span></h3>
+
+				<p class="footer-links">
+					<a href="index.did">Home</a>
+					·
+					<a href="/mini_project/catagory.did?kind=1">Harness</a>
+					·
+					<a href="#">leash</a>
+					·
+					<a href="#">Hoodie</a>
+					·
+					<a href="#">Strap</a>
+					·
+					<a href="#">On Sale</a>
+				</p>
+
+				<p class="footer-company-name">대덕인재개발원 202호 &copy; 2016</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>대전광역시 중구 중앙로</span>76 영민빌딩 2층 202호</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>010-0000-0000</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:ddit@ddit.or.kr">ddit@ddit.or.kr</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About FrenchieBullDog</span>
+					이상용 박지현 백승부 여준영
+				</p>
+
+
+			</div>
 
 	</footer>
 </body>
@@ -276,21 +323,60 @@ td {
 </script>
 
 <script>
-//
-// recent item    
-var Cpage;   // 현재 페이지 
-var pagingSize = 4;   // 원하는 페이지 사이즈로 조정하세용 
-function chkRecent(a){
-var itemID = getCookie("itemID");
-$("#right_zzim #ul").html('');    // 일단 Ul 내용 지우기... 
-if(itemID){
-	var totcount = itemID.split('&').length-1;   //
-	var totpage = Math.ceil(totcount / pagingSize) *1;
+<%-- loginPopup --%>
+
+function popupOpen(){
+/* 	var popUrl="member/login.jsp"; */
+	/* var w = 347;
+	var h = 284;
+	var left = (window.screen.width/2)-(w/2);
+	var top = (window.screen.height/2)-(h/2);
+
+	var win = window.open("member/login.jsp", "_blank", 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=347, height='+h);
+	win.moveTo(left, top); */
 	
-	Cpage = (totpage >= a )? a:1;
-	Cpage = (Cpage <1)? totpage:Cpage;
 	
-	var start = (Cpage-1) * pagingSize;    
+	/* 
+	var popOption="right=700, top=290, resizable=no, scrollbars=no, status=no;";
+	window.open(popUrl,"",popOption); */
+	
+	cw=screen.availWidth;     //화면 넓이
+	ch=screen.availHeight;    //화면 높이
+
+	 sw=347;    //띄울 창의 넓이
+	 sh=284;    //띄울 창의 높이
+
+	 ml=(cw-sw)/2;        //가운데 띄우기위한 창의 x위치
+	 mt=(ch-sh)/2;         //가운데 띄우기위한 창의 y위치
+
+	 window.open('member/login.jsp','tst','width='+sw+',height='+sh+',top='+mt+',left='+ml+',resizable=no,scrollbars=yes');
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+
+	//
+	// recent item    
+	var Cpage; // 현재 페이지 
+	var pagingSize = 4; // 원하는 페이지 사이즈로 조정하세용 
+	function chkRecent(a) {
+		var itemID = getCookie("itemID");
+		$("#right_zzim #ul").html(''); // 일단 Ul 내용 지우기... 
+		if (itemID) {
+			var totcount = itemID.split('&').length - 1; //
+			var totpage = Math.ceil(totcount / pagingSize) * 1;
+
+			Cpage = (totpage >= a) ? a : 1;
+			Cpage = (Cpage < 1) ? totpage : Cpage;
+
+			var start = (Cpage - 1) * pagingSize;
 
 	for (i = start ; i <= start+(pagingSize-1) ;i++){
 	var  thisItem = itemID.split('&')[i];

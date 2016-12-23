@@ -156,14 +156,6 @@
 				</div>
 			</div>
 			<%-- 트위터랑 인스타그램 --%>
-
-<div class="yotpo yotpo-main-widget"
-    data-product-id="{{ product.id }}"
-    data-name="{{ product.title | escape }}"
-    data-url="{{ shop.url }}{{ product.url }}"
-    data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
-    data-description="{{ product.description | escape }}">
-</div>
             
 		</div>
 
@@ -195,6 +187,7 @@
   </div>     --%>
 
 <script>
+	window.name="index";
 	$(document).ready(function() {
 		$("#myBtn").click(function() {
 			$("#myModal").modal();

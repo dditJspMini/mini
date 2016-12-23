@@ -12,7 +12,8 @@
 	<excludes>
 		<pattern>/findZipNum.did*</pattern>
 		<pattern>/idCheckForm.did*</pattern>	
-		<pattern>/admin/adminLoginForm.did</pattern>	
+		<pattern>/admin/adminLoginForm.did</pattern>
+		<pattern>/member/login.jsp</pattern>
 	</excludes>
 	
 </decorators>
