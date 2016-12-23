@@ -1,5 +1,7 @@
 function go_save() {
-	if (document.formm.id.value == "") {
+	var id = document.getElementById('id');
+	
+	if (id.value == "") {
 		alert("아이디를 입력하여 주세요.");
 		document.formm.id.focus();
 	} else if (document.formm.id.value != document.formm.reid.value) {
@@ -80,12 +82,13 @@ function checkPhone() {
 }
 
 function idcheck() {
-	if (document.formm.id.value == "") {
+	var id = document.getElementById('id');
+	if (id.value == "") {
 		alert('아이디를 입력하여 주십시오.');
 		document.formm.id.focus();
 		return;
 	}
-	var url = "idCheckForm.did?id=" + document.formm.id.value;
+	var url = "idCheckForm.did?id=" + id.value;
 	window
 			.open(url, "_blank_1",
 					"toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=400, height=200");

@@ -13,8 +13,10 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	function idok() {
-		opener.formm.id.value = "${id}";
-		opener.formm.reid.value = "${id}";
+		var id = document.getElementById('id');
+		var reid = document.getElementById('reid');
+		id.value = "${id}";
+		window.opener.document.getElementById('reid22').value = "${id}";
 		self.close();
 	}
 </script>

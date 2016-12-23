@@ -17,8 +17,10 @@
 
 <script type="text/javascript">
 	function result(zipNum, sido, gugun, dong) {
-		opener.document.formm.zipNum.value = zipNum;
-		opener.document.formm.addr1.value = sido + " " + gugun + " " + dong;
+		window.opener.document.getElementById('zipNum').value =zipNum;
+		window.opener.document.getElementById('addr1').value =sido + " " + gugun + " " + dong;
+		//opener.document.formm.zipNum.value = zipNum;
+		//opener.document.formm.addr1.value = sido + " " + gugun + " " + dong;
 		self.close();
 	};
 </script>
