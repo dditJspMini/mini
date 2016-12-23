@@ -34,6 +34,15 @@
 		select * from member where phone=#phone# and name=#name#
 	</select>
 	
+	<update id="updateMember" parameterClass="member">
+		update member set id=#id#,pwd=#pwd#,name=#name#,email=#email#,zipnum=#zipNum#,address=#address#,phone=#phone# where id=#id#
+		
+	</update>
+	
+	<delete id="deleteMember" parameterClass="str">
+		  DELETE FROM member WHERE id=#id#
+	</delete>
+	
 	<select id="serchPwd" parameterClass="member" resultClass="member">
 		select * from member where email=#email# and name=#name#
 	</select>

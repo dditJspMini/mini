@@ -14,7 +14,18 @@
 		<li data-target="#myCarousel" data-slide-to="2"></li>
 		<li data-target="#myCarousel" data-slide-to="3"></li>
 	</ol>
-
+	
+	<c:if test="${param.deleteresult==1}">
+		<script>
+		alert('회원삭제 성공');
+		</script>
+	</c:if>
+	<c:if test="${param.deleteresult==-1}">
+		<script>
+		alert('회원삭제 실패');
+		</script>
+	</c:if>
+	
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">

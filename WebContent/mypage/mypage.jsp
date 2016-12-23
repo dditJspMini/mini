@@ -7,6 +7,17 @@
 <%@ include file="sub_menu.jsp"%>
 <article>
 	<h2>My Page(${title})</h2>
+	<c:if test="${param.updateresult==1}">
+		<script>
+		alert('회원정보 수정 성공');
+		</script>
+	</c:if>
+	<c:if test="${param.updateresult==-1}">
+		<script>
+		alert('회원정보 수정 실패');
+		</script>
+	</c:if>
+	
 	<form name="formm" method="post">
 		<table id="cartList">
 			<tr>

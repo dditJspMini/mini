@@ -63,11 +63,24 @@
 					</div>
 					</div>
 					</div>
-			<button id="submitButton" class="btn btn-block btn-primary" onclick="go_update()">
+			<button id="submitButton" class="btn btn-block btn-primary" onclick="go_update(this.form)">
 									Update</button>
-			<button id="submitButton" class="btn btn-block btn-primary" onclick="go_delete()">
+			<button id="submitButton" class="btn btn-block btn-primary" onclick="go_delete(this.form)">
 									delete</button>
 			<button id="submitButton" class="btn btn-block btn-primary" onclick="">
 									back</button>
 		</form>
 		</div>
+		
+	<script>
+	function go_update(form){
+		form.action="updatemember.did";
+		form.method="post";
+		form.submit();
+	}
+	function go_delete(form){
+		form.action="deletemember.did";
+		form.method="post";
+		form.submit();
+	}
+	</script>
