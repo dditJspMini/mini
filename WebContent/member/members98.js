@@ -17,7 +17,7 @@ function go_save() {
 	} else if (document.formm.email.value == "") {
 		alert("이메일을 입력해 주세요.");
 		document.formm.email.focus();
-	} else if (!checkID() || !checkPwdForm() || !checkEmail() || !checkPhone())
+	} else if (!checkPwdForm() || !checkEmail() || !checkPhone())
 		return;
 	else {
 		document.formm.action = "join.did";
@@ -28,13 +28,13 @@ function go_save() {
 function checkID() {
 
 	var idCheck = /^[A-Za-z0-9+]*$/;
-	var id = document.join.id.value;
+	var id = document.formm.id.value;
 	var idLength = id.length;
 
 	if (!idCheck.test(id) || idLength > 10 || idLength < 1) {
 		alert("아이디가 올바르지 않습니다.\n아이디는 영문/숫자  10글자 이하 입니다.");
-		document.join.id.value = "";
-		document.join.id.focus();
+		document.formm.id.value = "";
+		document.formm.id.focus();
 		return false;
 	}
 	return true;
@@ -42,37 +42,38 @@ function checkID() {
 
 function checkPwdForm() {
 	var pwdCheck = /^(?=.*[a-zA-Z])(?=.*\d).{2,10}$/;
-	var pwd = document.join.pwd.value;
+	var pwd = document.formm.pwd.value;
 	// alert(pwdCheck.test(pwd));
 	if (!pwdCheck.test(pwd)) {
 		alert("패스워드가 유효하지 않습니다.\n영문 숫자 조합 10자 이내 입니다.");
-		document.join.pwd.value = "";
-		document.join.pwd.focus();
+		document.formm.pwd.value = "";
+		document.formm.pwdCheck.value = "";
+		document.formm.pwd.focus();
 		return false;
 	}
 	return true;
 }
 
 function checkEmail() {
-	var email = document.join.email.value;
+	var email = document.formm.email.value;
 	var emailCheck = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
 	if (!emailCheck.test(email)) {
 		alert("이메일 형식이 아닙니다..");
-		document.join.email.value = "";
-		document.join.email.focus();
+		document.formm.email.value = "";
+		document.formm.email.focus();
 		return false;
 	}
 	return true;
 }
 
 function checkPhone() {
-	var phone = document.join.phone.value;
+	var phone = document.formm.phone.value;
 	var phoneCheck = /^[0-9]*$/;
 	var phoneLength = phone.length;
 	if (!phoneCheck.test(phone) || phoneLength > 11 || phoneLength < 10) {
 		alert("전화번호는 10~11자리 숫자만 입력해 주세요.");
-		document.join.phone.value = "";
-		document.join.phone.focus();
+		document.formm.phone.value = "";
+		document.formm.phone.focus();
 		return false;
 	}
 	return true;
