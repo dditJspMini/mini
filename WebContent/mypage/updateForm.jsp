@@ -67,7 +67,7 @@
 									Update</button>
 			<button id="submitButton" class="btn btn-block btn-primary" onclick="go_delete(this.form)">
 									delete</button>
-			<button id="submitButton" class="btn btn-block btn-primary" onclick="">
+			<button id="submitButton" class="btn btn-block btn-primary" onclick="go_back()">
 									back</button>
 		</form>
 		</div>
@@ -83,4 +83,7 @@
 		form.method="post";
 		form.submit();
 	}
+	function go_back(){
+		history.go(-1);
+	};
 	</script>

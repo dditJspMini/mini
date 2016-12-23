@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container">
 	<div id="header"
 		style="padding-top: 20px; padding-left: 4%; margin-bottom: 20px;">
 		<h2>개인 가입 약관 동의</h2>
+		
 		<p>
 			서비스 약관 및 개인정보 수집, 이용에 <span style="color: #0099ff">동의</span>해 주세요.
 		</p>
@@ -226,22 +228,39 @@
 
 		</div>
 	</div>
-
+	<form id="join" name="formm" >
 	<div class="container">
 		<div class="btn-group">
-			<button type="button" class="btn btn-primary">네</button>
-			<button type="button" class="btn btn-primary">아니요</button>
+			<input type="radio" name="okon1"  onclick="delConfirm(this.form)"> 동의함 &nbsp; &nbsp; &nbsp;
+     		<input type="radio" name="okon1"  onclick="delConfirm(this.form)"> 동의안함
 		</div>
-		<button href="#step-2" class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+		<button href="#step-2" class="btn btn-primary nextBtn btn-lg " type="button" id="nextbtn" disabled="disabled" onclick="">Next</button>
 	</div>
+	</form>
 </div>
 
 
-
-
-
 <br>
 <br>
 
-
+<script>
+  
+  function delConfirm(form) {
+      if(form.okon1[0].checked == true) {
+         btn = document.getElementById('nextbtn');
+           btn.disabled = false;
+      }
+      else {
+         btn = document.getElementById('nextbtn');
+         btn.disabled = true;
+         alert('약관에 동의하셔야만 합니다.');
+      }
+   }
+</script>
 
