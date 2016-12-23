@@ -217,13 +217,13 @@ td {
 					·
 					<a href="/mini_project/catagory.did?kind=1">Harness</a>
 					·
-					<a href="#">leash</a>
+					<a href="/mini_project/catagory.did?kind=2">leash</a>
 					·
-					<a href="#">Hoodie</a>
+					<a href="/mini_project/catagory.did?kind=3">Hoodie</a>
 					·
-					<a href="#">Strap</a>
+					<a href="/mini_project/catagory.did?kind=4">Strap</a>
 					·
-					<a href="#">On Sale</a>
+					<a href="/mini_project/catagory.did?kind=5">On Sale</a>
 				</p>
 
 				<p class="footer-company-name">대덕인재개발원 202호 &copy; 2016</p>
@@ -243,7 +243,7 @@ td {
 
 				<div>
 					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:ddit@ddit.or.kr">ddit@ddit.or.kr</a></p>
+					<p>ddit@ddit.or.kr</p>
 				</div>
 
 			</div>
