@@ -8,6 +8,12 @@
 <title>NullPointer 에러 페이지</title>
 </head>
 <body>
-	NullPointer 익셉션이 발생했습니다.		
+<style type="text/css">
+html{height:100%;}
+body{
+	background:url(images/error/null.png) no-repeat;
+	background-size:60% 100%;
+	background-position: center;
+}		
 </body>
 </html>

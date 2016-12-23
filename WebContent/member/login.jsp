@@ -1,3 +1,4 @@
+<%@page import="com.nonage.dto.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 
@@ -23,7 +24,6 @@
     <button class="w3-btn w3-brown" type="submit" name="login" value="Login" onclick="send(this.form)">Register</button></p>
   </form>
 </div>
-
 </body>
 <script type="text/javascript">
   

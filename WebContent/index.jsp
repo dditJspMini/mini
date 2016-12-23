@@ -14,7 +14,8 @@
 		<li data-target="#myCarousel" data-slide-to="2"></li>
 		<li data-target="#myCarousel" data-slide-to="3"></li>
 	</ol>
-	
+	<%-- <%String member =null; %>
+	<%=member.toUpperCase() %> --%>
 	<c:if test="${param.deleteresult==1}">
 		<script>
 		alert('회원삭제 성공');
@@ -86,8 +87,6 @@
 						</button>
 					</div>
 				</div>
-
-
 
 
 			</td>

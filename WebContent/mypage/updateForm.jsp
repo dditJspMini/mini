@@ -61,14 +61,17 @@
 							</div>
 						</div>
 					</div>
-					</div>
-					</div>
-			<button id="submitButton" class="btn btn-block btn-primary" onclick="go_update(this.form)">
+						<button id="submitButton" class="btn  btn-primary" onclick="go_update(this.form)">
 									Update</button>
-			<button id="submitButton" class="btn btn-block btn-primary" onclick="go_delete(this.form)">
+						<button id="submitButton" class="btn  btn-primary" onclick="go_delete(this.form)">
 									delete</button>
-			<button id="submitButton" class="btn btn-block btn-primary" onclick="go_back()">
+						<button id="submitButton" class="btn  btn-primary" onclick="go_back()">
 									back</button>
+					</div>
+					</div>
+
+		
+					
 		</form>
 		</div>
 		
