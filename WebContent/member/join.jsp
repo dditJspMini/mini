@@ -23,79 +23,79 @@
 		</div>
 	</div>
 
-
 	<div class="row setup-content" id="step-1">
 		<jsp:include page="contract.jsp" flush="true"></jsp:include>
 	</div>
+
 	<form id="join" action="join.did" method="post" name="formm">
-	<div class="row setup-content" id="step-2">
-		<div class="col-xs-12">
-			<div class="col-md-12">
-				<h3>Step 2 - 기본 정보</h3>
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-8">
-							<div class="form-group">
-								<label>User ID</label> <input type="text" class="form-control"
-									id="id" placeholder="user id" required="" name="id"> <input
-									type="hidden" name="reid" value="abc"> <input
-									type="button" value="중복 체크" class="dup" onclick="idcheck()"><br>
+		<div class="row setup-content" id="step-2" style="margin-left: 10px;">
+			<h3>Step 2 - 회원 가입</h3>
+			<form>
+				<table>
+					<tr>
+						<td><label>User ID</label></td>
+						<td><input type="text" class="form-control" id="id"
+							placeholder="user id" required="" name="id"></td>
+						<td><input type="button" value="중복 체크"
+							class="dup btn btn-success" onclick="idcheck()"></td>
+						<td><input type="hidden" name="reid" value="abc"></td>
+					</tr>
+					<tr>
+						<td><label for="password">Password</label></td>
+						<td><input type="password" class="form-control" name="pwd"
+							placeholder="" required=""></td>
+					</tr>
 
-							</div>
+					<tr>
+						<td><label for="password">Retype Password</label></td>
+						<td><input type="password" class="form-control"
+							name="pwdCheck" placeholder="" required=""></td>
+					</tr>
 
-							<div class="form-group">
-								<label for="password">Password</label> 
-								<input type="password"
-									class="form-control" name="pwd" placeholder=""
-									required="">
-							</div>
+					<tr>
+						<td><label for="name">Name</label></td>
+						<td><input type="text" class="form-control" name="name"
+							id="name" placeholder="" required=""></td>
+					</tr>
 
-							<div class="form-group">
-								<label for="password">Retype Password</label> <input
-									type="password" class="form-control" name="pwdCheck"
-									placeholder="" required="">
-							</div>
+					<tr>
+						<td><label for="email">Email</label></td>
+						<td><input type="text" class="form-control" name="email"
+							id="email" placeholder="" required=""></td>
+					</tr>
 
-							<div class="form-group">
-								<label for="name">Name</label><input type="text"
-									class="form-control" name="name" id="name" placeholder=""
-									required="">
+					<tr>
+						<td><label>Zip Code</label></td>
+						<td><input type="text" class="form-control" id="zipNum"
+							name="zipNum" placeholder="zipNum" required=""></td>
+						<td><input type="button" value="주소 찾기"
+							class="btn btn-success" onclick="post_zip()"></td>
+					</tr>
 
-							</div>
-							<div class="form-group">
-								<label for="email">Email</label><input type="text"
-									class="form-contorl" name="email" id="email" placeholder=""
-									required="">
-							</div>
-							<div class="form-group">
-								<label>Zip Code</label> <input type="text" class="form-control"
-									id="zipNum" name="zipNum" placeholder="zipNum" required="">
-								<input type="button" value="주소 찾기" class="form-control"
-									onclick="post_zip()"><br>
+					<tr>
+						<td><label for="Address">Address</label></td>
+						<td><input type="text" class="form-control" name="addr1"
+							id="addr1" placeholder="" required=""></td>
+						<td><input type="text" class="form-control" id="addr2"
+							name="addr2" placeholder="" required=""></td>
+					</tr>
+
+					<tr>
+						<td><label for="PhoneNumber">PhoneNumber</label></td>
+						<td><input type="text" class="form-control" name="phone"
+							id="phone" placeholder="" required=""></td>
+					</tr>
+					<tr>
+						<td colspan="2"></td>
+						<td><button id="submitButton" class="btn btn-primary"
+								onclick="go_save()">Submit!</button></td>
+					</tr>
+				</table>
 
 
-								<div class="form-group">
-									<label for="Address">Address</label> <input type="text"
-										class="form-control" name="addr1" id="addr1" placeholder=""
-										required=""> <input type="text" class="form-control"
-										id="addr2" name="addr2" placeholder="" required="">
-								</div>
-
-
-								<div class="form-group">
-									<label for="PhoneNumber">PhoneNumber</label> <input type="text"
-										class="form-control" name="phone" id="phone" placeholder=""
-										required="">
-								</div>
-
-							</div>
-						</div>
-					</div>
-					</div>
-					</div>
-			<button id="submitButton" class="btn btn-block btn-primary" onclick="go_save()">
-									Submit!</button>
-		</form>
+			</form>
 		</div>
+	</form>
+</div>
 
 
