@@ -14,11 +14,7 @@
 					disabled="disabled">2</a>
 				<p>Step 2</p>
 			</div>
-			<div class="stepwizard-step">
-				<a href="#step-3" type="button" class="btn btn-default btn-circle"
-					disabled="disabled">3</a>
-				<p>Step 3</p>
-			</div>
+			
 
 		</div>
 	</div>
@@ -35,7 +31,7 @@
 					<tr>
 						<td><label>User ID</label></td>
 						<td><input type="text" class="form-control" id="id"
-							placeholder="user id" required="" name="id"></td>
+							placeholder="" required="" name="id"></td>
 						<td><input type="button" value="중복 체크"
 							class="dup btn btn-success" onclick="idcheck()"></td>
 						<td><input type="hidden" name="reid" value="abc"></td>
@@ -67,7 +63,7 @@
 					<tr>
 						<td><label>Zip Code</label></td>
 						<td><input type="text" class="form-control" id="zipNum"
-							name="zipNum" placeholder="zipNum" required=""></td>
+							name="zipNum" placeholder="" required=""></td>
 						<td><input type="button" value="주소 찾기"
 							class="btn btn-success" onclick="post_zip()"></td>
 					</tr>
@@ -88,7 +84,7 @@
 					<tr>
 						<td colspan="2"></td>
 						<td><button id="submitButton" class="btn btn-primary"
-								onclick="go_save()">Submit!</button></td>
+								onclick="go_save()">Submit</button></td>
 					</tr>
 				</table>
 
