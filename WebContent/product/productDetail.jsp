@@ -157,7 +157,7 @@
 	function checkCookie() {
 
 		var itemID = getCookie("itemID");
-		var thisItem = '${productVO.pseq}:${productVO.image}'; // 제품 아이디와 이미지 이름을 저장  2차원 배열처럼 쓸려고 짱구를 굴림...  json 형태로 저장도 가능할텐데.... 그건 취향대로 
+		var thisItem = '${productVO.pseq}:${productVO.image}:${productVO.name}'; // 제품 아이디와 이미지 이름을 저장  2차원 배열처럼 쓸려고 짱구를 굴림...  json 형태로 저장도 가능할텐데.... 그건 취향대로 
 		if (thisItem) {
 			if (itemID != "" && itemID != null) {
 				if (itemID.indexOf(thisItem) == -1) { //값이 없으면 

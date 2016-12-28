@@ -365,7 +365,7 @@ function popupOpen(){
 	//
 	// recent item    
 	var Cpage; // 현재 페이지 
-	var pagingSize = 4; // 원하는 페이지 사이즈로 조정하세용 
+	var pagingSize = 3; // 원하는 페이지 사이즈로 조정하세용 
 	function chkRecent(a) {
 		var itemID = getCookie("itemID");
 		$("#right_zzim #ul").html(''); // 일단 Ul 내용 지우기... 
@@ -383,7 +383,8 @@ function popupOpen(){
 		if(thisItem){
 			var itemId = thisItem.split(':')[0];			
 			var itemImg = thisItem.split(':')[1];
-		$("#right_zzim #ul").append('<a href="productDetail.did?pseq='+itemId+'" target="_top"><img src="product_images/'+itemImg+'"  width="75" border=1></a> <br><br><br> ')
+			var itemName = thisItem.split(':')[2];
+		$("#right_zzim #ul").append('<a href="productDetail.did?pseq='+itemId+'" target="_top"><img src="product_images/'+itemImg+'"  width="75" border=1><div>'+itemName+'</div> </a><br>')
 		}
 	}
 
