@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<div class="container" style="height: 800px;">
+<div class="container" style="min-height:750px;">
 	<%@ include file="sub_menu.jsp"%>
 
 	<h2>My Page(주문 상세 정보)</h2>

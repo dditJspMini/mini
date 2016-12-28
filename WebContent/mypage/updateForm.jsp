@@ -6,7 +6,7 @@
 
 	<form id="join" action="join.did" method="post" name="formm">
 				<h3>Step 2 - 기본 정보</h3>
-				<div class="container">
+				<div class="container" style="min-height:750px;">
 					<div class="row">
 						<div class="col-xs-8">
 							<div class="form-group">
