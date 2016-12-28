@@ -35,7 +35,7 @@
 	</select>
 	
 	<update id="updateMember" parameterClass="member">
-		update member set id=#id#,pwd=#pwd#,name=#name#,email=#email#,zipnum=#zipNum#,address=#address#,phone=#phone# where id=#id#
+		update member set pwd=#pwd#,name=#name#,email=#email#,zipnum=#zipNum#,address=#address#,phone=#phone# where id=#id#
 		
 	</update>
 	
