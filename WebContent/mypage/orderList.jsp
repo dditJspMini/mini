@@ -2,13 +2,13 @@
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%-- <%@ include file="../header.jsp" %> --%>
-<%@ include file="sub_img.jsp"%>
+
+<div class="container" style="min-height:750px; margin-top:20px">
 <%@ include file="sub_menu.jsp"%>
-<article>
+
 	<h2>Order List</h2>
 	<form name="formm" method="post">
-		<table id="cartList">
+		<table id="cartList" class="table table-striped">
 			<tr>
 				<th>상품명</th>
 				<th>수 량</th>
@@ -38,9 +38,8 @@
 
 		<div class="clear"></div>
 		<div id="buttons" style="float: right">
-			<input type="button" value="쇼핑 계속하기" class="cancel"
+			<input type="button" class="cancel btn btn-primary" value="쇼핑 계속하기" class="cancel"
 				onclick="location.href='index.did'">
 		</div>
 	</form>
-</article>
-<%-- <%@ include file="../footer.jsp"%> --%>
+</div>

@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 
-<div class="container" style="height: 800px;">
+<div class="container" style="min-height:750px; margin-top:20px">
 	<%@ include file="sub_menu.jsp"%>
 	<h2>Cart List</h2>
 	<form name="formm" method="post">

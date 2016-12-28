@@ -21,7 +21,8 @@
 <link href="css/shopping.css" rel="stylesheet">
 <link href="css/modal.css" rel="stylesheet">
 <link href="css/join.css" rel="stylesheet">
-<link href="css/footer-distributed-with-address-and-phones.css" rel="stylesheet">
+<link href="css/footer-distributed-with-address-and-phones.css"
+	rel="stylesheet">
 <link href="css/cookie.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
@@ -31,17 +32,23 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
 
 
-	<script type="text/javascript" src="product/products.js"></script>
-	<script type="text/javascript" src="member/members98.js"></script>
-	<script type="text/javascript" src="mypage/mypages.js"></script>
-	<script type="text/javascript" src="member/join.js"></script>
-	<script type="text/javascript" src="js/custom.js"></script>
-	<title>프블</title>
-	</head>
-	<body class="wrap">
+
+<script type="text/javascript" src="product/products.js"></script>
+<script type="text/javascript" src="member/members98.js"></script>
+<script type="text/javascript" src="mypage/mypages.js"></script>
+<script type="text/javascript" src="member/join.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<style>
+.bodywrap {
+	padding-top: 83px;
+	min-height: 800px;
+}
+</style>
+<title>프블</title>
+</head>
+<body class="bodywrap">
 	<header id="wrap">
 		<div class="main-navigation navbar-fixed-top">
 			<nav class="navbar navbar-default" style="padding-top: 4px;"
@@ -109,11 +116,11 @@
 			</nav>
 		</div>
 	</header>
-	
 
 
-	
-		<decorator:body />
+
+
+	<decorator:body />
 
 	<div id="rightSide">
 		<div id="right_zzim">
@@ -130,57 +137,57 @@
 		</div>
 	</div>
 
-	<footer class="footer-distributed"
-		style="padding-top: 20px; padding-bottom: 20px; padding-left: 350px; padding-right: 90px">
+	<footer class="footer-distributed" style="padding-top:20px; padding-bottom:10px;">
 
-		<div class="footer-left">
+		<div class="w3-container" style="max-width: 1140px; margin:0px auto; padding-left:0px; padding-right:0px;">
+			<div class="footer-left" style="margin-right:45px;">
 
-			<h3>
-				Frenchie<span>BullDog</span>
-			</h3>
+				<h3>
+					Frenchie<span>BullDog</span>
+				</h3>
 
-			<p class="footer-links">
-				<a href="index.did">Home</a> · <a
-					href="/mini_project/catagory.did?kind=1">Harness</a> · <a href="#">leash</a>
-				· <a href="#">Hoodie</a> · <a href="#">Strap</a> · <a href="#">On
-					Sale</a>
-			</p>
-
-			<p class="footer-company-name">대덕인재개발원 202호 &copy; 2016</p>
-		</div>
-
-		<div class="footer-center">
-
-			<div>
-				<i class="fa fa-map-marker"></i>
-				<p>
-					<span>대전광역시 중구 중앙로</span>76 영민빌딩 2층 202호
+				<p class="footer-links">
+					<a href="index.did">Home</a> · <a
+						href="/mini_project/catagory.did?kind=1">Harness</a> · <a href="#">leash</a>
+					· <a href="#">Hoodie</a> · <a href="#">Strap</a> · <a href="#">On
+						Sale</a>
 				</p>
+
+				<p class="footer-company-name">대덕인재개발원 202호 &copy; 2016</p>
 			</div>
 
-			<div>
-				<i class="fa fa-phone"></i>
-				<p>010-0000-0000</p>
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p>
+						<span>대전광역시 중구 중앙로</span>76 영민빌딩 2층 202호
+					</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>010-0000-0000</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p>
+						<a href="mailto:ddit@ddit.or.kr">ddit@ddit.or.kr</a>
+					</p>
+				</div>
+
 			</div>
 
-			<div>
-				<i class="fa fa-envelope"></i>
-				<p>
-					<a href="mailto:ddit@ddit.or.kr">ddit@ddit.or.kr</a>
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About FrenchieBullDog</span> 이상용 박지현 백승부 여준영
 				</p>
+
+
 			</div>
-
 		</div>
-
-		<div class="footer-right">
-
-			<p class="footer-company-about">
-				<span>About FrenchieBullDog</span> 이상용 박지현 백승부 여준영
-			</p>
-
-
-		</div>
-
 	</footer>
 </body>
 <script type="text/javascript">
@@ -299,10 +306,15 @@
 			for (i = start; i <= start + (pagingSize - 1); i++) {
 				var thisItem = itemID.split('&')[i];
 				if (thisItem) {
-					 var itemId = thisItem.split(':')[0];         
-			         var itemImg = thisItem.split(':')[1];
-			         var itemName = thisItem.split(':')[2];
-			         $("#right_zzim #ul").append('<a href="productDetail.did?pseq='+itemId+'" target="_top"><img src="product_images/'+itemImg+'"  width="75" border=1><div>'+itemName+'</div> </a><br>')
+					var itemId = thisItem.split(':')[0];
+					var itemImg = thisItem.split(':')[1];
+					var itemName = thisItem.split(':')[2];
+					$("#right_zzim #ul")
+							.append(
+									'<a href="productDetail.did?pseq='
+											+ itemId
+											+ '" target="_top"><img src="product_images/'+itemImg+'"  width="75" border=1><div>'
+											+ itemName + '</div> </a><br>')
 				}
 			}
 
