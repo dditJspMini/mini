@@ -14,8 +14,7 @@
 		<li data-target="#myCarousel" data-slide-to="2"></li>
 		<li data-target="#myCarousel" data-slide-to="3"></li>
 	</ol>
-	<%-- <%String member =null; %>
-	<%=member.toUpperCase() %> --%>
+	
 	<c:if test="${param.deleteresult==1}">
 		<script>
 		alert('회원삭제 성공');
@@ -72,41 +71,37 @@
 			style="width: 380px; height: 344px; margin-right: 10px"></p>
 </div> -->
 
-<div class="w3-content" style="max-width: 1200px" id="content">
+<div class="w3-content" style="max-width: 1140px" id="content">
 	<table align="center">
 		<tr>
-			<td>
-				<div class="w3-display-container w3-hover-opacity"
-					style="width: 380px" id="1">
-					<a href="catagory.did?kind=1"> <img alt="Hoodies"
-						src="image/feature1.jpg"
-						style="width: 380px; height: 344px; margin-right: 10px; cursor: pointer;"
+			<td style="padding-right:10px;">
+				<div class="w3-display-container w3-hover-opacity"style="min-width : 200px; width: 100%" id="1">
+					<img alt="Hoodies" src="image/feature1.jpg"
+						style="width: 100%; margin-right: 10px; cursor: pointer;"
 						id="img" class="img-rounded">
-						<div class="w3-display-middle w3-display-hover w3-xlarge">
-							<button
-								class="w3-btn w3-white w3-border w3-round-large w3-animate-opacity">
-								<b>HARNESSES</b>
-							</button>
-						</div>
-					</a>
+					<div class="w3-display-middle w3-display-hover w3-xlarge">
+						<button
+							class="w3-btn w3-white w3-border w3-round-large w3-animate-opacity">
+							<b>HARNESSES</b>
+						</button>
+					</div>
 				</div>
 
 
+
+
 			</td>
-			<td>
-				<div class="w3-display-container w3-hover-opacity"
-					style="width: 380px;" id="2">
-					<a href="catagory.did?kind=3"> <img alt="Hoodies"
-						src="image/feature2.jpg"
-						style="width: 380px; height: 344px; margin-right: 10px; cursor: pointer;"
+			<td style="padding-right:10px;">
+				<div class="w3-display-container w3-hover-opacity"	style="min-width : 200px; width: 100%;" id="2">
+					<img alt="Hoodies" src="image/feature2.jpg"
+						style="width: 100%; margin-right: 10px; cursor: pointer;"
 						id="img" class="img-rounded">
-						<div class="w3-display-middle w3-display-hover w3-xlarge">
-							<button
-								class="w3-btn w3-white w3-border w3-round-large w3-animate-opacity">
-								<b>HOODIES</b>
-							</button>
-						</div>
-					</a>
+					<div class="w3-display-middle w3-display-hover w3-xlarge">
+						<button
+							class="w3-btn w3-white w3-border w3-round-large w3-animate-opacity">
+							<b>HOODIES</b>
+						</button>
+					</div>
 				</div>
 
 
@@ -114,18 +109,16 @@
 
 			</td>
 			<td>
-				<div class="w3-display-container w3-hover-opacity"
-					style="width: 380px" id="3">
-					<a href="catagory.did?kind=5"> <img alt="Hoodies" src="image/feature3.jpg"
-						style="width: 380px; height: 344px; margin-right: 10px; cursor: pointer;"
+				<div class="w3-display-container w3-hover-opacity"style="min-width : 200px; width: 100%;"id="3">
+					<img alt="Hoodies" src="image/feature3.jpg"
+						style="width: 100%; margin-right: 10px; cursor: pointer;"
 						id="img" class="img-rounded">
-						<div class="w3-display-middle w3-display-hover w3-xlarge">
-							<button
-								class="w3-btn w3-white w3-border w3-round-large w3-animate-opacity">
-								<b>BOW TIES</b>
-							</button>
-						</div>
-					</a>
+					<div class="w3-display-middle w3-display-hover w3-xlarge">
+						<button
+							class="w3-btn w3-white w3-border w3-round-large w3-animate-opacity">
+							<b>BOW TIES</b>
+						</button>
+					</div>
 				</div>
 			</td>
 		</tr>
@@ -134,14 +127,13 @@
 	<div class="w3-container">
 		<div style="margin-right: 0px;">
 			<div class="w3-row w3-container"
-				style="width: 1180px; padding-left: 0px; padding-right: 0px">
+				style="width: 1140px; padding-left: 0px; padding-right: 0px">
 				<%-- tweets --%>
-				<div class="w3-half w3-container"
-					style="margin-top: 0px; padding-top: 10px; padding-bottom: 10px; padding-left: 0px; padding-right: 0px;">
+				<div class="w3-half w3-container" 
+					style="margin-top: 0px;margin-left:0px; padding-top: 10px; padding-bottom: 10px; padding-left: 0px; padding-right: 0px;">
 					<span id="subject" style="margin-bottom: 0px;"><b>TWEETS</b></span>
 					<div
-						class="fw3-container w3-section w3-border-top w3-border-bottom"
-						style="margin-top: 0px !important;">
+						class="fw3-container w3-section w3-border-top w3-border-bottom" style="width:100%; margin-top: 0px !important;">
 						<a class="twitter-timeline"
 							href="https://twitter.com/FrenchBulldog__"
 							data-chrome="noheader nofooter" data-tweet-limit="7"></a>
@@ -151,7 +143,7 @@
 				</div>
 
 				<div class="w3-half w3-container"
-					style="margin-top: 0px; padding-top: 10px; padding-bottom: 10px padding-left:0px; padding-right: 0px">
+					style="margin-top: 0px; padding-top: 10px; padding-bottom: 10px; padding-left:0px; padding-right: 0px">
 					<span id="subject" style="margin-bottom: 0px;"><b>#FRENCHBULLDOG</b></span>
 					<div class="w3-container w3-section w3-border-top w3-border-bottom"
 						style="margin-top: 0px !important;">
