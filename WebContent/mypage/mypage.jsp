@@ -5,8 +5,8 @@
 
 
 
-<div class="container" style="height: 800px;">
-	
+<div class="container" style="min-height:750px; margin-top:20px">
+	<%@ include file="sub_menu.jsp"%>
 
 	<h2>My Page(${title})</h2>
 	<c:if test="${param.updateresult==1}">
@@ -46,6 +46,5 @@
 			<input type="button" value="쇼핑 계속하기" class="cancel btn btn-primary"
 				onclick="location.href='index.did'">
 		</div>
-		<%@ include file="sub_menu.jsp"%>
 	</form>
 </div>
