@@ -22,10 +22,12 @@ public class DeleteMemberAction implements Action {
 		response.setContentType("text/html;charset=utf-8");
 		String url ="redirect:"+request.getContextPath()+"/index.did";
 		int result = 0;
-	
+		MemberVO deletemember = new MemberVO();
 		MemberDAO memberDAO = MemberDAO_iBatis.getInstance();
+		deletemember.setId(request.getParameter("id").trim());
+		deletemember.setUseyn("n");
 		try {
-			result = memberDAO.deleteMember(request.getParameter("id").trim());
+			result = memberDAO.deleteMember(deletemember);
 			url=url+"?deleteresult="+result;
 			session.invalidate();
 		} catch (SQLException e) {

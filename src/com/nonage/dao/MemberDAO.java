@@ -15,5 +15,5 @@ public interface MemberDAO {
 	public MemberVO serchPwd(String name,String email) throws SQLException;
 	
 	public int updateMember(MemberVO memberVO) throws SQLException;
-	public int deleteMember(String id) throws SQLException;
+	public int deleteMember(MemberVO memberVO) throws SQLException;
 }

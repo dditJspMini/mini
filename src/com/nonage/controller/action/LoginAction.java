@@ -22,31 +22,39 @@ public class LoginAction implements Action {
 
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
-
+		String useyn = "y";
 		// MemberDAO memberDAO = MemberDAO_JDBC.getInstance();
 		MemberDAO memberDAO = MemberDAO_iBatis.getInstance();
 		MemberVO memberVO = null;
+		
 		try {
 			memberVO = memberDAO.getMember(id);
+			if(memberVO!=null){
+				useyn=memberVO.getUseyn();
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		System.out.println(useyn);
 		if (memberVO != null) {
-			if (isAdminUser(id)) { // Admin
-				if (memberVO.getPwd().equals(pwd)) {
-					session.removeAttribute("id");
-					session.setAttribute("loginUser", memberVO);
-					url = "redirect:"+request.getContextPath() +"/admin/adminProductList.did";
-				}
-			} else { // 일반 User
+			if(memberVO.getUseyn().equals("n")){
+				url=url+"?useyn=n";
+			}else{
+				if (isAdminUser(id)) { // Admin
+					if (memberVO.getPwd().equals(pwd)) {
+						session.removeAttribute("id");
+						session.setAttribute("loginUser", memberVO);
+						url = "redirect:"+request.getContextPath() +"/admin/adminProductList.did";
+					}
+				} else { // 일반 User
 
-				if (memberVO.getPwd().equals(pwd)) {
-					session.removeAttribute("id");
-					session.setAttribute("loginUser", memberVO);
-					url = "index.did?login=1";
-				}
+					if (memberVO.getPwd().equals(pwd)) {
+						session.removeAttribute("id");
+						session.setAttribute("loginUser", memberVO);
+						url = "index.did?login=1";
+					}
+				}		
 			}
 		}
 		return url;
