@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 
-<div class="container">
+<style>
+table, td{
+border : 10px solid white;
+}
+</style>
+<div class="container" style="min-height: 750px; margin-top: 20px;">
 
 	<div class="stepwizard">
 		<div class="stepwizard-row setup-panel">
@@ -27,13 +32,12 @@
 		<div class="row setup-content" id="step-2" style="margin-left: 10px;">
 			<h3>Step 2 - 회원 가입</h3>
 			<input type="hidden" name="reid22" id="reid22" value="abc">
-			<table>
+			<table >
 				<tr>
 					<td><label>User ID</label></td>
 					<td><input type="text" class="form-control" id="id" name="id"></td>
 					<td><input type="button" value="중복 체크"
 						class="dup btn btn-success" onclick="idcheck()"></td>
-					<td></td>
 				</tr>
 				<tr>
 					<td><label for="password">Password</label></td>

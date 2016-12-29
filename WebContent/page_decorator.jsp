@@ -84,7 +84,7 @@
 
 									<li><a href="findForm.did" id="menu1"><span
 											class="glyphicon glyphicon-search" data-toggle="tooltip"
-											data-original-title="join" id="menu"></span></a></li>
+											data-original-title="Search" id="menu"></span></a></li>
 
 
 								</c:when>
@@ -104,9 +104,6 @@
 											;
 											data-toggle="tooltip"
 											data-original-title="Logout" id="menu"></span></a></li>
-
-
-
 								</c:otherwise>
 							</c:choose>
 						</ul>

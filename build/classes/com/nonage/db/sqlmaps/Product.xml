@@ -56,7 +56,11 @@
 	</update>
 	
 	<update id="deleteProduct" parameterClass="str">
-		delete from product where pseq=#pseq#
+		update product set useyn='n' where pseq=#pseq#
+	</update>
+	
+	<update id="registerProduct" parameterClass="str">
+		update product set useyn='y' where pseq=#pseq#
 	</update>
 
 </sqlMap>
