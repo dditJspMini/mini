@@ -21,6 +21,9 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+	integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	crossorigin="anonymous"></script>
 <title><decorator:title />Admin page</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/admin.css">
@@ -199,18 +202,58 @@
 	function delConfirm(text,prodName) {
 		if(text.value==prodName) {
 			btn = document.getElementById('confirmDel');
-	  		btn.disabled = false;
-		}
-		else {
+			btn.disabled = false;
+		} else {
 			btn = document.getElementById('confirmDel');
-	  		btn.disabled = true;
+			btn.disabled = true;
+		}
+	}
+
+	function regConfirm(text, prodName) {
+		if (text.value == prodName) {
+			btn = document.getElementById('confirmReg');
+			btn.disabled = false;
+		} else {
+			btn = document.getElementById('confirmReg');
+			btn.disabled = true;
 		}
 	}
 
 	$(document).ready(function() {
-		$('[data-toggle="tooltip"]').tooltip({
+		/* $('[data-toggle="tooltip"]').tooltip({
 			placement : 'bottom'
-		});
+		}); */
+
+		
+		$('#memberList tbody').on( 'click', 'tr', function () {
+	        //alert($(this).closest('tr').children('td.name').text());
+	        var id = $(this).closest('tr').children('td.id').text();
+	        var name = $(this).closest('tr').children('td.name').text();
+	        var email = $(this).closest('tr').children('td.email').text();
+	        var phone = $(this).closest('tr').children('td.phone').text();
+	        var pwd = $(this).closest('tr').children('td.pwd').text();
+	        var zipNum = $(this).closest('tr').children('td.zipNum').text();
+	        var address = $(this).closest('tr').children('td.address').text();
+	        var indate = $(this).closest('tr').children('td.indate').text();
+	        var useyn = $(this).closest('tr').children('td.useyn').text();
+	        
+	        
+	        $('#editId').val(id);
+	        $('#editName').val(name);
+	        $('#editEmail').val(email);
+	        $('#editPhone').val(phone);
+	        $('#editPwd').val(pwd);
+	        $('#editZipNum').val(zipNum);
+	        $('#editAddr').val(address);
+	        $('#editIndate').val(indate);
+	        if(useyn=='y'){ 
+	        	$("input:radio[name='editUseyn']:radio[value='y']").attr("checked",true);
+	        }
+	        else { 
+	        	$("input:radio[name='editUseyn']:radio[value='n']").attr("checked",true);
+	        }
+	        //$('#editUseyn').val(useyn);
+	    } ); 
 	});
 
 	$(document).ready(function() {

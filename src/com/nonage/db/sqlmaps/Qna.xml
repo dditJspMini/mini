@@ -24,6 +24,10 @@
 		select * from qna order by indate desc
 	</select>
 	
+	<select id="totalQna" resultClass="int">
+		select count(*) from qna
+	</select>
+	
 	<update id="updateQna" parameterClass="qna" >
 		update qna set reply=#reply#, rep='2' where qseq=#qseq#
 	</update>

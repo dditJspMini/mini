@@ -24,20 +24,33 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${qnaList}" var="qnaVO">
-						<tr>
-							<td>${qnaVO.qseq}<c:choose>
-									<c:when test='${qnaVO.rep=="1"}'>(미처리)</c:when>
-									<c:otherwise>(답변처리완료)</c:otherwise>
-								</c:choose>
-							</td>
-							<td><a href="adminQnaDetail.did?qseq=${qnaVO.qseq}">
-									${qnaVO.subject} </a></td>
-							<td>${qnaVO.id}</td>
-							<td><fmt:formatDate value="${qnaVO.indate}" /></td>
-						</tr>
-					</c:forEach>
-			</tbody>
+					<c:choose>
+						<c:when test="${qnaListSize<=0}">
+							<tr>
+								<td width="100%" colspan="5" align="center" height="23">
+									There are no registered Q&A.</td>
+							</tr>
+						</c:when>
+						<c:otherwise>
+							<c:forEach items="${qnaList}" var="qnaVO">
+								<tr>
+									<td>${qnaVO.qseq}<c:choose>
+											<c:when test='${qnaVO.rep=="1"}'>(미처리)</c:when>
+											<c:otherwise>(답변처리완료)</c:otherwise>
+										</c:choose>
+									</td>
+									<td><a href="adminQnaDetail.did?qseq=${qnaVO.qseq}">
+											${qnaVO.subject} </a></td>
+									<td>${qnaVO.id}</td>
+									<td><fmt:formatDate value="${qnaVO.indate}" /></td>
+								</tr>
+							</c:forEach>
+							<tr>
+								<td colspan="4" style="text-align: center;">${paging}</td>
+							</tr>
+						</c:otherwise>
+					</c:choose>
+				</tbody>
 			</table>
 
 

@@ -61,8 +61,8 @@ public class ProductDAO_iBatis implements ProductDAO {
 		return total_pages;
 	}
 
-	static int view_rows = 5; // 페이지의 개수
-	static int counts = 5; // 한 페이지에 나타낼 상품의 개수
+	static int view_rows = 10; // 페이지의 개수
+	static int counts = 10; // 한 페이지에 나타낼 상품의 개수
 	
 	@Override
 	public String pageNumber(int tpage, String name) throws SQLException {
@@ -152,4 +152,9 @@ public class ProductDAO_iBatis implements ProductDAO {
 		return result;
 	}
 	// Implement "delete product"
+	
+	public int registerProduct(String prodNum) throws SQLException {
+		int result = (Integer)client.update("registerProduct",prodNum);
+		return result;
+	}
 }

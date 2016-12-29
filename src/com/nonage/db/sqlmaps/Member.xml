@@ -30,6 +30,10 @@
 		select * from member where name like '%'||#name#||'%' order by indate desc
 	</select>
 	
+	<select id="totalMember" parameterClass="str" resultClass="int">
+		select count(*) from member where name like '%'||#name#||'%'
+	</select>
+	
 	<select id="serchId" parameterClass="member" resultClass="member">
 		select * from member where phone=#phone# and name=#name#
 	</select>
@@ -39,8 +43,8 @@
 		
 	</update>
 	
-	<delete id="deleteMember" parameterClass="member">
-		  update member set useyn=#useyn# where id=#id#
+	<delete id="deleteMember" parameterClass="str">
+		  DELETE FROM member WHERE id=#id#
 	</delete>
 	
 	<select id="serchPwd" parameterClass="member" resultClass="member">

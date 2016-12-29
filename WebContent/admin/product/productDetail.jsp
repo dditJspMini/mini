@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,8 +51,19 @@
 			<input class="btn btn-default" type="button" value="수정"
 				onClick="location.href='adminProductUpdateForm.did?tpage=${tpage}&pseq=${productVO.pseq}'">
 			<input class="btn btn-default" type="button" value="취소"
-				onClick="go_mov()"> <input class="btn btn-danger"
-				type="button" value="삭제" data-toggle="modal" data-target="#myModal">
+				onClick="go_mov()">
+
+			<c:choose>
+				<c:when test='${productVO.useyn=="y"}'>
+					<input class="btn btn-danger" type="button" value="삭제"
+						data-toggle="modal" data-target="#myModal">
+				</c:when>
+				<c:otherwise>
+					<input class="btn btn-success" type="button" value="등록"
+						data-toggle="modal" data-target="#myModal2">
+				</c:otherwise>
+			</c:choose>
+
 
 			<!-- Modal -->
 			<div class="modal fade" id="myModal" role="dialog">
@@ -66,14 +78,44 @@
 						</div>
 						<div class="modal-body">
 							<p>Enter this product name to confirm</p>
-							<input type="text"
-								id="inputName" name="inputName" style="width: 90%"
+							<input type="text" id="inputName" name="inputName"
+								style="width: 90%"
 								onKeyUp="delConfirm(this, '${productVO.name}')">
 
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-danger" disabled="disabled"
-								id="confirmDel" onclick="location.href='adminProductDelete.did?key=${productVO.pseq}'">Delete</button>
+								id="confirmDel"
+								onclick="location.href='adminProductDelete.did?key=${productVO.pseq}'">Delete</button>
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+			<div class="modal fade" id="myModal2" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Are you sure you want to register
+								this?</h4>
+						</div>
+						<div class="modal-body">
+							<p>Enter this product name to confirm</p>
+							<input type="text" id="inputName" name="inputName"
+								style="width: 90%"
+								onKeyUp="regConfirm(this, '${productVO.name}')">
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-success" disabled="disabled"
+								id="confirmReg"
+								onclick="location.href='adminProductRegister.did?key=${productVO.pseq}'">Register</button>
 							<button type="button" class="btn btn-default"
 								data-dismiss="modal">Close</button>
 						</div>

@@ -15,7 +15,9 @@ public interface QnaDAO {
   /* *
    * 관리자 모드에서 필요한 메소드
    */
-  public ArrayList<QnaVO> listAllQna() throws SQLException;
+  public ArrayList<QnaVO> listAllQna(int tpage) throws SQLException;
 
   public void updateQna(QnaVO qnaVO) throws SQLException;
+
+  public String pageNumber(int parseInt) throws SQLException;
 }

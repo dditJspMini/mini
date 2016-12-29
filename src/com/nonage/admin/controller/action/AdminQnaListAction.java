@@ -15,23 +15,42 @@ import com.nonage.dto.QnaVO;
 
 public class AdminQnaListAction implements Action {
 
-  @Override
-  public String execute(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
+	@Override
+	public String execute(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 
-    String url = "qna/qnaList.jsp";
-    
-    /*QnaDAO qnaDAO = QnaDAO_JDBC.getInstance();*/
-    QnaDAO qnaDAO = QnaDAO_iBatis.getInstance();
-    ArrayList<QnaVO> qnaList=null;
-	try {
-		qnaList = qnaDAO.listAllQna();
-	} catch (SQLException e) {
-		e.printStackTrace();
+		String url = "qna/qnaList.jsp";
+
+		String key = request.getParameter("key");
+		String tpage = request.getParameter("tpage");
+
+		if (key == null) {
+			key = "";
+		}
+		if (tpage == null) {
+			tpage = "1"; // 현재 페이지 (default 1)
+		} else if (tpage.equals("")) {
+			tpage = "1";
+		}
+		request.setAttribute("key", key);
+		request.setAttribute("tpage", tpage);
+
+		/* QnaDAO qnaDAO = QnaDAO_JDBC.getInstance(); */
+		QnaDAO qnaDAO = QnaDAO_iBatis.getInstance();
+		ArrayList<QnaVO> qnaList = null;
+		String paging=null;
+		try {
+			qnaList = qnaDAO.listAllQna(Integer.parseInt(tpage));
+			paging = qnaDAO.pageNumber(Integer.parseInt(tpage));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		request.setAttribute("qnaList", qnaList);
+		int n=qnaList.size();   
+	    request.setAttribute("qnaListSize",n); 
+	    request.setAttribute("paging", paging);  
+
+		return url;
 	}
-
-    request.setAttribute("qnaList", qnaList);
-
-    return url;
-  }
 }
