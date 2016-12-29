@@ -43,9 +43,9 @@
 		
 	</update>
 	
-	<delete id="deleteMember" parameterClass="str">
-		  DELETE FROM member WHERE id=#id#
-	</delete>
+	<delete id="deleteMember" parameterClass="member">
+ 		  update member set useyn=#useyn# where id=#id#
+  	</delete>
 	
 	<select id="serchPwd" parameterClass="member" resultClass="member">
 		select * from member where email=#email# and name=#name#
