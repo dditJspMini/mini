@@ -106,7 +106,7 @@
 						</form>
 				
 				<br>
-				<div class="w3-container" style="padding-left: 340px";>
+				<div class="w3-container" style="padding-left: 50%";>
 					<button class="w3-btn w3-round-xlarge" onclick="go_cart()">장바구니</button>
 					&nbsp&nbsp&nbsp
 					<button class="w3-btn w3-round-xlarge" onclick="go_direct_order()">즉시구매</button>
