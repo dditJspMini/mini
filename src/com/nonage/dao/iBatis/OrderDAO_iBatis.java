@@ -99,8 +99,22 @@ public class OrderDAO_iBatis implements OrderDAO {
 		return oseqList;
 	}
 	@Override
-	public ArrayList<OrderVO> listOrder(String member_name) throws SQLException {
-		ArrayList<OrderVO> orderList=(ArrayList<OrderVO>)client.queryForList("listOrder",member_name );
+	public ArrayList<OrderVO> listOrder(int tpage, String member_name) throws SQLException {
+		int startRow = -1;
+		int endRow = -1;
+		
+		if (member_name.equals("")) {
+			member_name = "%";
+		}
+
+		int totalRecord = totalRecord(member_name);
+		
+		startRow = (tpage - 1) * counts ;
+		endRow = startRow + counts - 1;
+		if (endRow > totalRecord)
+			endRow = totalRecord;
+		
+		ArrayList<OrderVO> orderList=(ArrayList<OrderVO>)client.queryForList("listOrder",member_name,startRow,counts );
 		return orderList;
 	}
 
@@ -119,8 +133,8 @@ public class OrderDAO_iBatis implements OrderDAO {
 		return total_pages;
 	}
 
-	static int view_rows = 10; // ÆäÀÌÁöÀÇ °³¼ö
-	static int counts = 10; // ÇÑ ÆäÀÌÁö¿¡ ³ªÅ¸³¾ »óÇ°ÀÇ °³¼ö
+	static int view_rows = 10; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	static int counts = 10; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 	@Override
 	public String pageNumber(int tpage, String name) throws SQLException {

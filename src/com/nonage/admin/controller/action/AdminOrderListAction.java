@@ -28,7 +28,7 @@ public class AdminOrderListAction implements Action {
 		}
 
 		if (tpage == null) {
-			tpage = "1"; // ÇöÀç ÆäÀÌÁö (default 1)
+			tpage = "1"; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (default 1)
 		} else if (tpage.equals("")) {
 			tpage = "1";
 		}
@@ -42,7 +42,7 @@ public class AdminOrderListAction implements Action {
 		String paging=null;
 		
 		try {
-			orderList = orderDAO.listOrder(key);
+			orderList = orderDAO.listOrder(Integer.parseInt(tpage),key);
 			paging = orderDAO.pageNumber(Integer.parseInt(tpage), key);
 		} catch (SQLException e) {
 			e.printStackTrace();
