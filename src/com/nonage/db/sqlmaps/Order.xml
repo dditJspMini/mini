@@ -45,4 +45,8 @@
 	<update id="updateOrderResult" parameterClass="str">
 		update order_detail set result='2' where odseq=#oseq#
 	</update>
+	
+	<select id="totalOrder" parameterClass="str" resultClass="int">
+		select count(*) from orders where id like '%'||#id#||'%'
+	</select>
 </sqlMap>

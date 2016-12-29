@@ -39,27 +39,40 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${orderList}" var="orderVO">
-							<tr>
-								<td><c:choose>
-										<c:when test='${orderVO.result=="1"}'>
-											<span style="font-weight: bold; color: blue">${orderVO.odseq}</span>
+						<c:choose>
+							<c:when test="${productListSize<=0}">
+								<tr>
+									<td width="100%" colspan="9" align="center" height="23">
+										There are no orders.</td>
+								</tr>
+							</c:when>
+							<c:otherwise>
+								<c:forEach items="${orderList}" var="orderVO">
+									<tr>
+										<td><c:choose>
+												<c:when test='${orderVO.result=="1"}'>
+													<span style="font-weight: bold; color: blue">${orderVO.odseq}</span>
         (<input type="checkbox" name="result" value="${orderVO.odseq}"> 미처리)
         </c:when>
-										<c:otherwise>
-											<span style="font-weight: bold; color: red">${orderVO.odseq}</span>
+												<c:otherwise>
+													<span style="font-weight: bold; color: red">${orderVO.odseq}</span>
           (<input type="checkbox" checked="checked" disabled="disabled">처리완료)
         </c:otherwise>
-									</c:choose></td>
-								<td>${orderVO.mname}</td>
-								<td>${orderVO.pname}</td>
-								<td>${orderVO.quantity}</td>
-								<td>${orderVO.zipNum}</td>
-								<td>${orderVO.address}</td>
-								<td>${orderVO.phone}</td>
-								<td><fmt:formatDate value="${orderVO.indate}" /></td>
-							</tr>
-						</c:forEach>
+											</c:choose></td>
+										<td>${orderVO.mname}</td>
+										<td>${orderVO.pname}</td>
+										<td>${orderVO.quantity}</td>
+										<td>${orderVO.zipNum}</td>
+										<td>${orderVO.address}</td>
+										<td>${orderVO.phone}</td>
+										<td><fmt:formatDate value="${orderVO.indate}" /></td>
+									</tr>
+								</c:forEach>
+								<tr>
+									<td colspan="8" style="text-align: center;">${paging}</td>
+								</tr>
+							</c:otherwise>
+						</c:choose>
 					</tbody>
 				</table>
 				<p class="text-center">

@@ -106,7 +106,65 @@ public class OrderDAO_iBatis implements OrderDAO {
 
 	@Override
 	public void updateOrderResult(String oseq) throws SQLException {
-		client.update("updateOrderResult",oseq);
-	}	
+		client.update("updateOrderResult", oseq);
+	}
+
+	public int totalRecord(String product_name) throws SQLException {
+		int total_pages = 0;
+		if (product_name.equals("")) {
+			product_name = "%";
+		}
+		total_pages = (Integer) client.queryForObject("totalOrder",
+				product_name);
+		return total_pages;
+	}
+
+	static int view_rows = 10; // 페이지의 개수
+	static int counts = 10; // 한 페이지에 나타낼 상품의 개수
+
+	@Override
+	public String pageNumber(int tpage, String name) throws SQLException {
+		String str = "";
+
+		int total_pages = totalRecord(name);
+		int page_count = total_pages / counts + 1;
+
+		if (total_pages % counts == 0) {
+			page_count--;
+		}
+		if (tpage < 1) {
+			tpage = 1;
+		}
+
+		int start_page = tpage - (tpage % view_rows) + 1;
+		int end_page = start_page + (counts - 1);
+
+		if (end_page > page_count) {
+			end_page = page_count;
+		}
+		if (start_page > view_rows) {
+			str += "<a href='adminOrderList.did?tpage=1&key=" + name
+					+ "'>&lt;&lt;</a>&nbsp;&nbsp;";
+			str += "<a href='adminOrderList.did?tpage=" + (start_page - 1);
+			str += "&key=<%=product_name%>'>&lt;</a>&nbsp;&nbsp;";
+		}
+
+		for (int i = start_page; i <= end_page; i++) {
+			if (i == tpage) {
+				str += "<font color=red>[" + i + "]&nbsp;&nbsp;</font>";
+			} else {
+				str += "<a href='adminOrderList.did?tpage=" + i + "&key="
+						+ name + "'>[" + i + "]</a>&nbsp;&nbsp;";
+			}
+		}
+
+		if (page_count > end_page) {
+			str += "<a href='adminOrderList.did?tpage=" + (end_page + 1)
+					+ "&key=" + name + "'> &gt; </a>&nbsp;&nbsp;";
+			str += "<a href='adminOrderList.did?tpage=" + page_count
+					+ "&key=" + name + "'> &gt; &gt; </a>&nbsp;&nbsp;";
+		}
+		return str;
+	}
 
 }

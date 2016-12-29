@@ -30,4 +30,6 @@ public interface OrderDAO {
 	public ArrayList<OrderVO> listOrder(String member_name) throws SQLException;
 	
 	public void updateOrderResult(String oseq) throws SQLException;
+	
+	public String pageNumber(int tpage, String name) throws SQLException;
 }
