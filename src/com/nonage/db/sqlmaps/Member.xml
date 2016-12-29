@@ -43,6 +43,11 @@
 		
 	</update>
 	
+	<update id="updateMemberAdmin" parameterClass="member">
+		update member set pwd=#pwd#,name=#name#,email=#email#,zipnum=#zipNum#,address=#address#,phone=#phone#, useyn=#useyn# where id=#id#
+		
+	</update>
+	
 	<delete id="deleteMember" parameterClass="member">
  		  update member set useyn=#useyn# where id=#id#
   	</delete>

@@ -58,8 +58,8 @@ public class MemberDAO_iBatis implements MemberDAO {
 		return total_pages;
 	}
 
-	static int view_rows = 10; // ÆäÀÌÁöÀÇ °³¼ö
-	static int counts = 10; // ÇÑ ÆäÀÌÁö¿¡ ³ªÅ¸³¾ »óÇ°ÀÇ °³¼ö
+	static int view_rows = 10; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	static int counts = 10; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 	public String pageNumber(int tpage, String member_name) throws SQLException {
 		String str = "";
@@ -158,5 +158,11 @@ public class MemberDAO_iBatis implements MemberDAO {
  		int res = client.update("deleteMember", memberVO);
   		return res;
   	}
+
+	@Override
+	public int updateMemberAdmin(MemberVO memberVO) throws SQLException {
+		int res = client.update("updateMemberAdmin", memberVO);
+		return res;
+	}
 
 }

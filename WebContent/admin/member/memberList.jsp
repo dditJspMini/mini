@@ -84,86 +84,87 @@
 
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" role="dialog">
-			<div class="modal-dialog modal-lg">
+			<div class="modal-dialog modal-lg" >
 				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Edit member info</h4>
-					</div>
-					<div class="modal-body">
-						<table>
-							<tr>
-								<td><label>User ID</label></td>
-								<td><input type="text" class="form-control" id="editId"
-									name="editId" readonly="readonly"></td>
-								<td></td>
-							</tr>
+					<form action="" id="updateInfoAdmin" name="updateInfoAdmin">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Edit member info</h4>
+						</div>
+						<div class="modal-body">
 
-							<tr>
-								<td><label for="password">Password</label></td>
-								<td><input type="password" class="form-control"
-									name="editPwd" id="editPwd" placeholder="" required=""></td>
-							</tr>
+							<table>
+								<tr>
+									<td><label>User ID</label></td>
+									<td><input type="text" class="form-control" id="editId"
+										name="editId" readonly="readonly"></td>
+									<td></td>
+								</tr>
 
-							<tr>
-								<td><label for="password">Retype Password</label></td>
-								<td><input type="password" class="form-control"
-									name="pwdCheck" placeholder="" required=""></td>
-							</tr>
+								<tr>
+									<td><label for="password">Password</label></td>
+									<td><input type="text" class="form-control" name="editPwd"
+										id="editPwd" placeholder="" required=""></td>
+								</tr>
 
-							<tr>
-								<td><label for="name">Name</label></td>
-								<td><input type="text" class="form-control" name="editName"
-									id="editName" placeholder="" required=""></td>
-							</tr>
 
-							<tr>
-								<td><label for="email">Email</label></td>
-								<td><input type="text" class="form-control"
-									name="editEmail" id="editEmail" placeholder="" required=""></td>
-							</tr>
 
-							<tr>
-								<td><label>Zip Code</label></td>
-								<td><input type="text" class="form-control" id="editZipNum"
-									name="editZipNum" placeholder="" required=""></td>
-								<td><input type="button" value="ÁÖ¼Ò Ã£±â"
-									class="btn btn-success" onclick="post_zip()"></td>
-							</tr>
+								<tr>
+									<td><label for="name">Name</label></td>
+									<td><input type="text" class="form-control"
+										name="editName" id="editName" placeholder="" required=""></td>
+								</tr>
 
-							<tr>
-								<td><label for="editAddr">Address</label></td>
-								<td><input type="text" class="form-control" name="editAddr"
-									id="editAddr" placeholder="" required=""></td>
-							</tr>
+								<tr>
+									<td><label for="email">Email</label></td>
+									<td><input type="text" class="form-control"
+										name="editEmail" id="editEmail" placeholder="" required=""></td>
+								</tr>
 
-							<tr>
-								<td><label for="editPhone">PhoneNumber</label></td>
-								<td><input type="text" class="form-control"
-									name="editPhone" id="editPhone" placeholder="" required=""></td>
-							</tr>
+								<tr>
+									<td><label>Zip Code</label></td>
+									<td><input type="text" class="form-control"
+										id="editZipNum" name="editZipNum" placeholder="" required=""></td>
+									<td><input type="button" value="ì£¼ì†Œì°¾ê¸°"
+										class="btn btn-success" onclick="post_zip()"></td>
+								</tr>
 
-							<tr>
-								<td><label for="editIndate">Indate</label></td>
-								<td><input type="text" class="form-control"
-									name="editIndate" id="editIndate" placeholder="" required=""
-									readonly="readonly"></td>
-							</tr>
+								<tr>
+									<td><label for="editAddr">Address</label></td>
+									<td><input type="text" class="form-control"
+										name="editAddr" id="editAddr" placeholder="" required=""></td>
+								</tr>
 
-							<tr>
-								<td><label>Use Y/N</label></td>
-								<td><input type="radio" class="form-control"
-									name="editUseyn" id="editUseyn" value="y"> Y<br /> <input
-									type="radio" class="form-control" name="editUseyn"
-									id="editUseyn" value="n"> N<br /></td>
+								<tr>
+									<td><label for="editPhone">PhoneNumber</label></td>
+									<td><input type="text" class="form-control"
+										name="editPhone" id="editPhone" placeholder="" required=""></td>
+								</tr>
 
-							</tr>
-						</table>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary">Update</button>
-						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-					</div>
+								<tr>
+									<td><label for="editIndate">Indate</label></td>
+									<td><input type="text" class="form-control"
+										name="editIndate" id="editIndate" placeholder="" required=""
+										readonly="readonly"></td>
+								</tr>
+
+								<tr>
+									<td><label>Use Y/N</label></td>
+									<td><input type="radio" class="form-control"
+										name="editUseyn" id="editUseyn" value="y"> Y<br /> <input
+										type="radio" class="form-control" name="editUseyn"
+										id="editUseyn" value="n"> N<br /></td>
+
+								</tr>
+							</table>
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary"
+								onclick="go_adminUpdate(this.form)">Update</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

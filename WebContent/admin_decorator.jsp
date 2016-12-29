@@ -267,6 +267,15 @@
 			}
 		})
 	});
+	
+	function go_adminUpdate(form){
+		/* alert("5");
+		//var form = $('#updateInfoAdmin')
+		alert(form); */
+		form.action="adminUpdatemember.did";
+		form.method="post";
+		form.submit();
+	}
 </script>
 </html>
 
