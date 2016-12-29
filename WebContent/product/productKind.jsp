@@ -5,7 +5,7 @@
 
 </style>
 <body>
-	<div class="w3-container" style="max-width:1140px; margin:auto; padding-left: 0px; padding-right:0px;">
+	<div class="w3-container" style="max-width:1040px; margin-left:5%; padding-left: 0px; padding-right:0px;">
 		<div class="w3-content"  id="section" style="max-width:1140px;">
 			<br>
 			<c:choose>
@@ -30,7 +30,7 @@
 			<div style="overflow: hidden; margin: 0 auto;">
 				<c:forEach items="${productKindList }" var="productVO"
 					varStatus="status">
-					<div style="float: left; width: 380px">
+					<div style="float: left; width: 340px">
 						<a href="productDetail.did?pseq=${productVO.pseq}"> <img
 							id="harness_img" src="product_images/${productVO.image}"
 							style="width: 100%; margin: 5px, 5px, 5px, 5px;"
@@ -56,4 +56,5 @@
 		</div>
 
 	</div>
+
 </body>

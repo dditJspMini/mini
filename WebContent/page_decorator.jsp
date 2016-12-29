@@ -310,7 +310,7 @@
 							.append(
 									'<a href="productDetail.did?pseq='
 											+ itemId
-											+ '" target="_top"><img src="product_images/'+itemImg+'"  width="75" border=1><div>'
+											+ '" target="_top"><img src="product_images/'+itemImg+'"  width="100" border=1><div>'
 											+ itemName + '</div> </a><br>')
 				}
 			}

@@ -2,8 +2,7 @@
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<div class="container">
-
+<div class="container" style="min-height:780px; max-width: 1040px; margin-left:5%;">
 	<h2>1:1 고객 게시판</h2>
 	<div id="buttons" style="float: right; margin-bottom: 10px;">
 		<input type="button" value="목록보기" class="submit btn btn-primary"

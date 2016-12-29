@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ include file="../header.jsp" %> --%>
 
-<div class="container" style="min-height:755px;">
+<div class="container" style="min-height:780px; max-width: 1040px; margin-left:5%;">
 	<h2 style="text-align: center;">1:1 고객 게시판</h2>
 	
 	<div id="buttons" style="float: right; margin-bottom: 10px;">

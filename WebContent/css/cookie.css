@@ -7,11 +7,11 @@ margin: 0 0 0 510px;
 #rightSide #right_zzim {
 position: fixed;
 top: 126px;
-left: 50%;
+left: 40%;
 margin-left: 605px;
 border:1px solid #B0B5BD;
 width:150px;
-height:600px;
+height:570px;
 }
 
 #rightSide #right_zzim  div {text-align:center;}
@@ -52,7 +52,7 @@ text-indent: -9000px;
 #paging {display:;position:relative;line-height:1em;}
 #paging .btn_prev {
 position: absolute;
-top: 526px;
+top: 555px;
 left: 4px;
 width: 13px;
 height: 11px;
@@ -64,7 +64,7 @@ display:inline-block;
 
 #paging .btn_next {
 position: absolute;
-top: 526px;
+top: 555px;
 right: 4px;
 width: 13px;
 height: 11px;

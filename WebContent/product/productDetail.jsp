@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-<div class="w3-content" style="max-width: 1140px; min-height:750px;" id="section"
+<div class="w3-content" style="max-width: 1040px; margin-left:5%; min-height:750px;" id="section"
 	oncontextmenu="return false">
 	<div id="itemdetail">
 		<div id="productpath">

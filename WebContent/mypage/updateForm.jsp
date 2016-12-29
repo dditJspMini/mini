@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<div class="container">
-
+<div class="container" style="min-height:780px; max-width: 1040px; margin-left:5%; margin-top:20px;">
 
 	<form id="join" action="join.did" method="post" name="formm">
 				<h3>Step 2 - 기본 정보</h3>

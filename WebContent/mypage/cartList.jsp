@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 
-<div class="container" style="min-height:750px; margin-top:20px">
+<div class="container" style="margin-top:20px; min-height:780px; max-width: 1040px; margin-left:5%;">
 	<%@ include file="sub_menu.jsp"%>
 	<h2>Cart List</h2>
 	<form name="formm" method="post">
@@ -19,15 +19,15 @@
 						<th>수 량</th>
 						<th>가 격</th>
 						<th>주문일</th>
-						<th>삭 제</th>
+						<th>선 택</th>
 					</tr>
 
 					<c:forEach items="${cartList}" var="cartVO">
 						<tr>
 							<td><a href="productDetail.did?pseq=${cartVO.pseq}">
-									<h3>${cartVO.pname}</h3>
+									${cartVO.pname}
 							</a></td>
-							<td>${cartVO.quantity}</td>
+							<td style="text-align:center">${cartVO.quantity}</td>
 							<td><fmt:formatNumber
 									value="${cartVO.price2*cartVO.quantity}" type="currency" /></td>
 							<td><fmt:formatDate value="${cartVO.indate}" type="date" /></td>

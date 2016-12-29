@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 
-<div class="container">
+<div class="container" style="min-height:780px; max-width: 1040px; margin-left:5%;">
 	<h2>1:1 고객 게시판</h2>
 	<form name="formm" >
 		<div class="form-group">

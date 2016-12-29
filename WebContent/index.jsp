@@ -73,7 +73,7 @@
 			style="width: 380px; height: 344px; margin-right: 10px"></p>
 </div> -->
 
-<div class="w3-content" style="max-width: 1140px" id="content">
+<div class="w3-content" style="max-width:1040px; margin-left:5%" id="content">
 	<table align="center">
 		<tr>
 			<td style="padding-right:10px;">
@@ -129,10 +129,10 @@
 	<div class="w3-container">
 		<div style="margin-right: 0px;">
 			<div class="w3-row w3-container"
-				style="width: 1140px; padding-left: 0px; padding-right: 0px">
+				style="width: 1000px; padding-left: 0px; padding-right: 0px">
 				<%-- tweets --%>
 				<div class="w3-half w3-container" 
-					style="margin-top: 0px;margin-left:0px; padding-top: 10px; padding-bottom: 10px; padding-left: 0px; padding-right: 0px;">
+					style="margin-top: 0px;margin-left:0px; padding-top: 10px; padding-bottom: 10px; padding-left: 0px; padding-right: 10px;">
 					<span id="subject" style="margin-bottom: 0px;"><b>TWEETS</b></span>
 					<div
 						class="fw3-container w3-section w3-border-top w3-border-bottom" style="width:100%; margin-top: 0px !important;">
