@@ -21,7 +21,7 @@ public class UpdateMemberAction implements Action {
 		HttpSession session = request.getSession();
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-		String url ="redirect:"+request.getContextPath()+"/mypage.did";
+		String url ="redirect:"+request.getContextPath()+"/updateForm.did";
 		int result = 0;
 		MemberVO memberVO = new MemberVO();
 		MemberVO updatememberVO = new MemberVO();
