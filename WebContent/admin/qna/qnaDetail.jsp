@@ -35,10 +35,13 @@
 				<div class="form-group">
 					<label for="comment">Comment:</label>
 					<textarea class="form-control" name="reply" rows="3" id="reply"></textarea>
-					<p style="text-align: right;"><input type="hidden" name="qseq" value="${qnaVO.qseq}"> <input
-						type="submit" class="btn btn-default" value="저장"></p>
-					
-					</td>
+					<p style="text-align: right;">
+						<input type="hidden" name="qseq" value="${qnaVO.qseq}"> <input
+							type="submit" class="btn btn-default" value="저장"> <input
+							type="button" class="btn btn-default" value="취소"
+							onclick="location.href='adminQnaList.did'">
+					</p>
+
 				</div>
 			</form>
 
@@ -46,12 +49,18 @@
 			<br>
 		</c:when>
 		<c:otherwise>
-			<table id="orderList">
-				<tr>
-					<th>댓글</th>
-					<td>${qnaVO.reply}</td>
-				</tr>
-			</table>
+			<form action="adminQnaRepsave.did" method="post">
+				<div class="form-group">
+					<label for="comment">Comment:</label>
+					<textarea class="form-control" name="reply" rows="3" id="reply">${qnaVO.reply}</textarea>
+					<p style="text-align: right;">
+						<input type="hidden" name="qseq" value="${qnaVO.qseq}"> <input
+							type="submit" class="btn btn-default" value="수정"> <input
+							type="button" class="btn btn-default" value="취소"
+							onclick="location.href='adminQnaList.did'">
+					</p>
+				</div>
+			</form>
 		</c:otherwise>
 	</c:choose>
 

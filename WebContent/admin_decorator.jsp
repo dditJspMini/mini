@@ -66,10 +66,6 @@
 
 
 		<footer class="container-fluid text-center">
-			<nav class="navbar navbar-default navbar-fixed-bottom" id="bottombar">
-				<div style="margin: auto;">© 2016 Frenchie Bulldog. Powered by
-					Shopify</div>
-			</nav>
 
 		</footer>
 	</div>

@@ -15,28 +15,45 @@ import com.nonage.dto.OrderVO;
 
 public class AdminOrderListAction implements Action {
 
-  @Override
-  public String execute(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
+	@Override
+	public String execute(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 
-    String url = "order/orderList.jsp";
-    String key = "";
-    if (request.getParameter("key") != null) {
-      key = request.getParameter("key");
-    }
+		String url = "order/orderList.jsp";
+		String key = "";
+		String tpage = request.getParameter("tpage");
 
-    /*OrderDAO orderDAO = OrderDAO_JDBC.getInstance();*/
-    OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
-    ArrayList<OrderVO> orderList=null;
-	try {
-		orderList = orderDAO.listOrder(key);
-	} catch (SQLException e) {	
-		e.printStackTrace();
+		if (request.getParameter("key") != null) {
+			key = request.getParameter("key");
+		}
+
+		if (tpage == null) {
+			tpage = "1"; // ���� ������ (default 1)
+		} else if (tpage.equals("")) {
+			tpage = "1";
+		}
+		
+		request.setAttribute("key", key);
+	    request.setAttribute("tpage",tpage);
+
+		/* OrderDAO orderDAO = OrderDAO_JDBC.getInstance(); */
+		OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
+		ArrayList<OrderVO> orderList = null;
+		String paging=null;
+		
+		try {
+			orderList = orderDAO.listOrder(Integer.parseInt(tpage),key);
+			paging = orderDAO.pageNumber(Integer.parseInt(tpage), key);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		request.setAttribute("orderList", orderList);
+		int n=orderList.size();   
+	    request.setAttribute("orderListSize",n); 
+	    request.setAttribute("paging", paging); 
+		
+		return url;
 	}
 
-    request.setAttribute("orderList", orderList);
-
-    return url;
-  }
-  
 }

@@ -24,7 +24,7 @@
 	<c:if test="${param.deleteresult==-1}">
 		<script>
 		alert('회원삭제 실패');
-		location.replace('index.did')
+		location.replace('index.did') 
 		</script>
 	</c:if>
 	
