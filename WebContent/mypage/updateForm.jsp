@@ -1,11 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container">
 
 
 	<form id="join" action="join.did" method="post" name="formm">
 				<h3>Step 2 - 기본 정보</h3>
+				
+				<c:if test="${param.result==1}">
+						<script>
+							alert('회원정보 수정 성공');
+							location.replace('updateForm.did')
+						</script>
+					</c:if>
+					<c:if test="${param.result==-1}">
+						<script>
+							alert('회원정보 수정 실패');
+							location.replace('updateForm.did')
+						</script>
+					</c:if>
 				<div class="container" style="min-height:750px;">
 					<div class="row">
 						<div class="col-xs-8">
