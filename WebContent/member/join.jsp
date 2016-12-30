@@ -6,7 +6,7 @@ table, td{
 border : 10px solid white;
 }
 </style>
-<div class="container" style="min-height: 750px; margin-top: 20px;">
+<div class="container" style="min-height: 780px; margin-top: 20px;">
 
 	<div class="stepwizard">
 		<div class="stepwizard-row setup-panel">

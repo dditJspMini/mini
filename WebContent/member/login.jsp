@@ -9,21 +9,26 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <body>
 
-<div class="w3-card-4">
-  <div class="w3-container w3-brown">
-    <h2>Login to Your Account</h2>
-  </div>
-  <form class="w3-container" action="login.did" name="form">
-    <p>      
-    <label class="w3-label w3-text-brown"><b>ID</b></label>
-    <input class="w3-input w3-border w3-sand" name="id" type="text" value="${id}"></p>
-    <p>      
-    <label class="w3-label w3-text-brown"><b>PASSWORD</b></label>
-    <input class="w3-input w3-border w3-sand" name="pwd" type="password"></p>
-    <p>
-    <button class="w3-btn w3-brown" type="submit" name="login" value="Login" onclick="send(this.form)">Register</button></p>
-  </form>
-</div>
+	<div class="w3-card-4">
+		<div class="w3-container w3-brown">
+			<h2>Login to Your Account</h2>
+		</div>
+		<form class="w3-container" action="login.did" name="form">
+			<p>
+				<label class="w3-label w3-text-brown"><b>ID</b></label> <input
+					class="w3-input w3-border w3-sand" name="id" type="text"
+					value="${id}">
+			</p>
+			<p>
+				<label class="w3-label w3-text-brown"><b>PASSWORD</b></label> <input
+					class="w3-input w3-border w3-sand" name="pwd" type="password">
+			</p>
+			<p>
+				<button class="w3-btn w3-brown" type="submit" name="login"
+					value="Login" onclick="send(this.form)">Register</button>
+			</p>
+		</form>
+	</div>
 </body>
 <script type="text/javascript">
   
@@ -32,9 +37,11 @@
   	form.action="<%=request.getContextPath()%>/login.did";
   	form.method="post";
   	form.submit();
+  	
+  	
  	form.target="index"; 
-   	
-window.close();
+   	/* opener.parent.location.reload(); */
+	window.close();
     
     
     }
@@ -58,7 +65,7 @@ window.close();
    <%--  opener.top.location.href="<%=request.getContextPath()%>/index.did"; --%>
     
 </script>
-</html> 
+</html>
 
 
 <%-- 

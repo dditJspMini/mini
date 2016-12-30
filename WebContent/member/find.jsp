@@ -2,8 +2,12 @@
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-<div style="margin-left: 20%;">
+<style>
+table td {
+border: 10px solid white;
+}
+</style>
+<div class="container" style="margin-top:20px; min-height:780px; max-width: 1040px; margin-left:5%;">
 <br><br><br>
 	<h3>아이디 찾기</h3>
 	<form id="idfind" action="UserIdFind.did" method="post" name="idform">

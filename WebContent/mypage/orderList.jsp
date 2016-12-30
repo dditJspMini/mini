@@ -19,7 +19,7 @@
 			<c:forEach items="${orderList}" var="orderVO">
 				<tr>
 					<td><a href="productDetail.did?pseq=${cartVO.pseq}">
-							<h3>${orderVO.pname}</h3>
+							${orderVO.pname}
 					</a></td>
 					<td>${orderVO.quantity}</td>
 					<td><fmt:formatNumber

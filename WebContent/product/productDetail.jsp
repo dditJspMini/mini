@@ -2,9 +2,9 @@
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-<div class="w3-content" style="max-width: 1040px; margin-left:5%; min-height:750px;" id="section"
-	oncontextmenu="return false">
+<div class="w3-content"
+	style="max-width: 1040px; margin-left: 5%; min-height: 750px;"
+	id="section" oncontextmenu="return false">
 	<div id="itemdetail">
 		<div id="productpath">
 			<a href="<%=request.getContextPath()%>/index.did"
@@ -74,51 +74,47 @@
 
 			</div>
 			<form method="post" name="formm">
-			<div class="w3-half w3-container">
-				<div>
-					<span id="productdetailintro">
-						<h1>${productVO.name}</h1>
-						<h3>￦${productVO.price2}</h3> <br> <br> <c:choose>
-							<c:when test="${productVO.kind=='1'||productVO.kind=='3' }">
-								<form name="form" >
-									<div class="form-group">
-										<label for="sel1"><b>사이즈</b> </label> <select
-											class="form-control" name="sel" id="sel" onChange="change()">
-											<option value="M">M</option>
-											<option value="X">X</option>
-											<option value="L">L</option>
-										</select> <br>
-								</form>
-							</c:when>
-						</c:choose>
-
-						<!--
+				<div class="w3-half w3-container">
+					<div>
+						<span id="productdetailintro">
+							<h1>${productVO.name}</h1>
+							<h3>￦${productVO.price2}</h3> <br> <br> <c:choose>
+								<c:when test="${productVO.kind=='1'||productVO.kind=='3' }">
+									<form name="form">
+										<div class="form-group">
+											<label for="sel1"><b>사이즈</b> </label> <select
+												class="form-control" name="sel" id="sel" onChange="change()">
+												<option value="M">M</option>
+												<option value="X">X</option>
+												<option value="L">L</option>
+											</select> <br>
+									</form>
+								</c:when>
+							</c:choose> <!--
 					 	<form name="form2">
 							<label for="usr"><b> 남은 수량</b> </label> <input type="text"
 								name="qty" class="form-control" id="qty" value="20">
 						</form> 
-						-->
-						
-						<br>
-							<label for="usr"><b> 선택 수량</b> </label> <input type="text"
-								name="quantity" class="form-control" id="selqty" value="1">
-							<input type="hidden" name="pseq" value="${productVO.pseq}"><br>
-						</form>
-				
-				<br>
-				<div class="w3-container" style="padding-left: 50%";>
-					<button class="w3-btn w3-round-xlarge" onclick="go_cart()">장바구니</button>
-					&nbsp&nbsp&nbsp
-					<button class="w3-btn w3-round-xlarge" onclick="go_direct_order()">즉시구매</button>
-				</div>
-				</span> <br> <br> <b style="color: black">사이즈가 궁금하세요?</b><br>
-				<img src="images/sizing.jpg" / style="width: 100%">
+						--> <br> <label for="usr"><b> 선택 수량</b> </label> <input
+							type="text" name="quantity" class="form-control" id="selqty"
+							value="1"> <input type="hidden" name="pseq"
+							value="${productVO.pseq}"><br>
+			</form>
 
-
-
+			<br>
+			<div class="w3-container" style="padding-left: 50%";>
+				<button class="w3-btn w3-round-xlarge" onclick="go_cart()">장바구니</button>
+				&nbsp&nbsp&nbsp
+				<button class="w3-btn w3-round-xlarge" onclick="go_direct_order()">즉시구매</button>
 			</div>
+			</span> <br> <br> <b style="color: black">사이즈가 궁금하세요?</b><br>
+			<img src="images/sizing.jpg" / style="width: 100%">
+
+
+
 		</div>
 	</div>
+</div>
 </div>
 
 
@@ -154,6 +150,7 @@
 </div>
 
 <script type="text/javascript">
+
 	function checkCookie() {
 
 		var itemID = getCookie("itemID");
@@ -209,5 +206,26 @@
 		today.setDate(today.getDate() + parseInt(expireDate));
 		document.cookie = cookieName + "=" + escape(cookieValue)
 				+ "; path=/; expires=" + today.toGMTString() + ";";
+	}
+
+	function popupOpen() {
+
+
+		alert(id);
+		/* if(window.sessionStorage */
+		cw = screen.availWidth; //화면 넓이
+		ch = screen.availHeight; //화면 높이
+
+		sw = 347; //띄울 창의 넓이
+		sh = 284; //띄울 창의 높이
+
+		ml = (cw - sw) / 2; //가운데 띄우기위한 창의 x위치
+		mt = (ch - sh) / 2; //가운데 띄우기위한 창의 y위치
+
+		window
+				.open('member/login.jsp', 'tst', 'width=' + sw + ',height='
+						+ sh + ',top=' + mt + ',left=' + ml
+						+ ',resizable=no,scrollbars=yes');
+
 	}
 </script>
