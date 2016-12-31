@@ -103,9 +103,9 @@
 
 			<br>
 			<div class="w3-container" style="padding-left: 50%";>
-				<button class="w3-btn w3-round-xlarge" onclick="go_cart()">장바구니</button>
+				<button class="w3-btn w3-round-xlarge" onclick="go_cart2()">장바구니</button>
 				&nbsp&nbsp&nbsp
-				<button class="w3-btn w3-round-xlarge" onclick="go_direct_order()">즉시구매</button>
+				<button class="w3-btn w3-round-xlarge" onclick="go_direct_order2()">즉시구매</button>
 			</div>
 			</span> <br> <br> <b style="color: black">사이즈가 궁금하세요?</b><br>
 			<img src="images/sizing.jpg" / style="width: 100%">
@@ -226,6 +226,46 @@
 				.open('member/login.jsp', 'tst', 'width=' + sw + ',height='
 						+ sh + ',top=' + mt + ',left=' + ml
 						+ ',resizable=no,scrollbars=yes');
+
+	}
+	
+	function go_cart2() {
+		var login = "<c:out value="${loginUser}"/>";
+		//alert(login);
+
+		if (login == null || login == "") {
+			<c:set var="loginDir" value="prodDtail" scope="session"/>
+			<c:set var="prodNum" value="${productVO.pseq}" scope="session"/>
+			popupOpen();
+		} else {
+			if (document.formm.quantity.value == "") {
+				alert("수량을 입력하여 주세요.");
+				document.formm.quantity.focus();
+			} else {
+				document.formm.action = "cartInsert.did";
+				document.formm.submit();
+			}
+		}
+
+	}
+	
+	function go_direct_order2() {
+		var login = "<c:out value="${loginUser}"/>";
+		//alert(login);
+
+		if (login == null || login == "") {
+			<c:set var="loginDir" value="prodDtail" scope="session"/>
+			<c:set var="prodNum" value="${productVO.pseq}" scope="session"/>
+			popupOpen();
+		} else {
+			if (document.formm.quantity.value == "") {
+				alert("수량을 입력하여 주세요.");
+				document.formm.quantity.focus();
+			} else {
+				document.formm.action = "orderDirectInsert.did";
+				document.formm.submit();
+			}
+		}
 
 	}
 </script>

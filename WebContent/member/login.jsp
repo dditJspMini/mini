@@ -13,7 +13,7 @@
 		<div class="w3-container w3-brown">
 			<h2>Login to Your Account</h2>
 		</div>
-		<form class="w3-container" action="login.did" name="form">
+		<form class="w3-container" name="form">
 			<p>
 				<label class="w3-label w3-text-brown"><b>ID</b></label> <input
 					class="w3-input w3-border w3-sand" name="id" type="text"
@@ -24,8 +24,8 @@
 					class="w3-input w3-border w3-sand" name="pwd" type="password">
 			</p>
 			<p>
-				<button class="w3-btn w3-brown" type="submit" name="login"
-					value="Login" onclick="send(this.form)">Register</button>
+				<button class="w3-btn w3-brown" type="button"
+					onclick="send(this.form)" name="login" value="Login">Register</button>
 			</p>
 		</form>
 	</div>
@@ -33,15 +33,23 @@
 <script type="text/javascript">
   
     function send(form) {
-    		
+    	
+   	//alert("${loginDir}");
   	form.action="<%=request.getContextPath()%>/login.did";
+    form.target = opener.window.name;
   	form.method="post";
   	form.submit();
   	
+  	self.close();
   	
- 	form.target="index"; 
-   	/* opener.parent.location.reload(); */
-	window.close();
+ 	//form.target="_parent";
+  	
+ 	//form.target="index"; 
+   	//opener.parent.location.reload();
+   	//window.opener.location.reload(true);
+   	//setTimeout(window.close(), 2000);
+	//window.close();
+	
     
     
     }

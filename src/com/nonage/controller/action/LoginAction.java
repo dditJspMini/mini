@@ -52,7 +52,23 @@ public class LoginAction implements Action {
 					if (memberVO.getPwd().equals(pwd)) {
 						session.removeAttribute("id");
 						session.setAttribute("loginUser", memberVO);
-						url = "index.did?login=1";
+						// String str =
+						// session.getAttribute("loginDir").toString();
+						if (session.getAttribute("loginDir") != null) {
+							if (session.getAttribute("loginDir").toString()
+									.equals("prodDtail")) {
+								String pseq = session.getAttribute("prodNum").toString();
+								url = "redirect:productDetail.did?pseq="+pseq;
+								//session.setAttribute("loginDir3", "1");
+								session.removeAttribute("loginDir");
+								session.removeAttribute("prodNum");
+								//session.invalidate();
+							} else {
+								url = "index.did?login=1";
+							}
+						} else {
+							url = "index.did?login=1";
+						}
 					}
 				}		
 			}
